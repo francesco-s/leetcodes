@@ -9,18 +9,18 @@ class Solution:
 
         res = [-1] * k
 
-        denominator = 2 * k + 1
+        window_size = 2 * k + 1
         current_sum = 0
 
-        if 2 * k + 1 <= len(nums):
+        if window_size <= len(nums):
             current_sum = sum(nums[0: 2 * k + 1])
-            res.append(current_sum // denominator)
+            res.append(current_sum // window_size)
 
         for i in range(k + 1, len(nums) - k):
             current_sum -= nums[i - k - 1]
             current_sum += nums[i + k]
 
-            res.append(current_sum // denominator)
+            res.append(current_sum // window_size)
 
         res.extend([-1] * k)
 
