@@ -17,7 +17,6 @@ class Solution:
         self.max_len = 0
 
         def dfs(root):
-
             if root is None:
                 return 0
 
