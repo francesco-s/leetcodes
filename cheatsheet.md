@@ -1,7 +1,3 @@
-Below is a clear list of when to use a **Heap, Stack, Queue, and HashMap**—with practical examples and typical use cases often seen on coding challenge platforms like LeetCode.
-
----
-
 ## **When to Use a Heap (Min-Heap / Max-Heap)**
 
 **Typical Scenarios:**

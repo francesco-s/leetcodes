@@ -26,12 +26,8 @@ class Solution:
             current.next = prev
             prev = current
             current = next
-
-        print(linked_list_to_list(prev))
-
         return prev
-
-
+    
 def create_linked_list(lst):
     dummy = ListNode()
     current = dummy

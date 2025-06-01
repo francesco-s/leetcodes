@@ -128,6 +128,6 @@ values = [1,2,3,4,5,None,8,None,None,6,7,9]
 root = create_tree_from_list(values)
 print("Test case 2:", Solution.preorderTraversalStack(root)) # Output: [4,2,6,5,7,1,3,9,8]
 
-values = [1,2,3,4,5,None,8,None,None,6,7,9]
-root = create_tree_from_list(values)
-print("Test case 2:", Solution.postorderTraversalStack(root)) # Output: [4,2,6,5,7,1,3,9,8]
+# values = [1,2,3,4,5,None,8,None,None,6,7,9]
+# root = create_tree_from_list(values)
+# print("Test case 2:", Solution.postorderTraversalStack(root)) # Output: [4,2,6,5,7,1,3,9,8]
