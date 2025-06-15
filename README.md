@@ -18,14 +18,14 @@ The core of this repository contains solutions organized by fundamental CS conce
 - **StacksQueues** - LIFO/FIFO data structure problems
 - **TreeGraph** - Binary trees, BSTs, and graph algorithms
 
-### 📓 Notebook
+### Notebook
 
 Interactive Jupyter notebooks for analysis and learning:
 
 - `GenericQuestions.ipynb` - Common coding patterns and templates
 - `LeetCode_path_weekly_topics.ipynb` - Weekly study plan and progress tracking
 
-### 📝 Notes
+### Notes
 
 Study materials and references:
 
