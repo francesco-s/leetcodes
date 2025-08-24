@@ -4,15 +4,16 @@ from typing import List
 class Solution:
 
     def dailyTemperatures(self, temperatures: List[int]) -> List[int]:
+        # Time Complexity: O(n), where n is the number of temperatures.
+        # Each temperature is pushed and popped from the stack at most once.
+        # Space Complexity: O(n), for the stack and result array.
         stack = []
         result = [0] * len(temperatures)
 
         for index, temperature in enumerate(temperatures):
-
             while stack and temperature > stack[-1][1]:
                 day, _ = stack.pop()
                 result[day] = index - day
-
             stack.append((index, temperature))
 
         return result
