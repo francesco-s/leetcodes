@@ -3,6 +3,12 @@ import math
 
 class Solution:
     def minEatingSpeed(self, piles: List[int], h: int) -> int:
+        """
+        Finds the minimum eating speed Koko needs to eat all bananas in h hours.
+
+        Time Complexity: O(N * log M), where N is the number of piles and M is the max pile size.
+        Space Complexity: O(1), uses constant extra space.
+        """
         right = max(piles)
         left = 1
 
