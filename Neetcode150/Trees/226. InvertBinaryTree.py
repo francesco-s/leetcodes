@@ -11,6 +11,15 @@ class TreeNode:
 class Solution:
 
     def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
+        """
+        Inverts a binary tree by recursively swapping the left and right children of every node.
+        Args:
+            root (Optional[TreeNode]): The root node of the binary tree.
+        Returns:
+            Optional[TreeNode]: The root node of the inverted binary tree.
+        Time Complexity (TC): O(n), where n is the number of nodes in the tree, since each node is visited once.
+        Space Complexity (SC): O(h), where h is the height of the tree, due to the recursion stack.
+        """
         if root is None:
             return
 
