@@ -9,17 +9,33 @@ class Twitter:
         self.following = defaultdict(set)     # userId -> {followeeId, ...}
 
     def postTweet(self, userId: int, tweetId: int) -> None:
+        """
+        Time Complexity: O(1)
+        Space Complexity: O(1) per tweet (total O(T) for all tweets)
+        """
         self.timer += 1
         self.tweets[userId].append((-self.timer, tweetId)) # max-heap
 
     def follow(self, followerId: int, followeeId: int) -> None:
+        """
+        Time Complexity: O(1)
+        Space Complexity: O(1) per follow relationship
+        """
         if followerId != followeeId:
             self.following[followerId].add(followeeId)
 
     def unfollow(self, followerId: int, followeeId: int) -> None:
+        """
+        Time Complexity: O(1)
+        Space Complexity: O(1)
+        """
         self.following[followerId].discard(followeeId)
 
     def getNewsFeed(self, userId: int) -> List[int]:
+        """
+        Time Complexity: O(N log N), where N is the total number of tweets from userId and their followees.
+        Space Complexity: O(N) for the heap.
+        """
         all_tweets = []
         all_tweets.extend(self.tweets[userId])
         for followee in self.following[userId]:
