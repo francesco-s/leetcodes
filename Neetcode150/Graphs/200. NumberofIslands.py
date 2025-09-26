@@ -22,7 +22,6 @@ class Solution:
 
         for col in range(num_cols):
             for row in range(num_rows):
-                print(8)
                 if grid[row][col] == "1":
                     dfs(row, col)
                     num_islands += 1
