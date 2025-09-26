@@ -4,6 +4,9 @@ class Solution:
         """
         :type grid: List[List[str]]  # '1' for land, '0' for water
         :rtype: int
+
+        Time Complexity (TC): O(n * m) where n is the number of rows and m is the number of columns.
+        Space Complexity (SC): O(n * m) in the worst case due to recursion stack.
         """
 
         num_rows, num_cols = len(grid), len(grid[0])
@@ -16,9 +19,7 @@ class Solution:
                 dfs(x, y - 1)
                 dfs(x + 1, y)
                 dfs(x, y + 1)
-                
             return
-
 
         for col in range(num_cols):
             for row in range(num_rows):
