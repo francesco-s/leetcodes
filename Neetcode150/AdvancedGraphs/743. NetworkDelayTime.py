@@ -4,6 +4,12 @@ from typing import List
 
 class Solution:
     def networkDelayTime(self, times: List[List[int]], n: int, k: int) -> int:
+        """
+        Uses Dijkstra's algorithm to determine the time it takes for a signal to travel to all nodes.
+        
+        Time Complexity: O((E + V) log V) ~ O(E log V), where V is the number of nodes and E is the number of edges.
+        Space Complexity: O(V + E)
+        """
         edges = defaultdict(list)
         for u, v, w in times:
             edges[u].append((v, w))
