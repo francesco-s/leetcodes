@@ -3,6 +3,9 @@ from typing import List
 
 class Solution:
     def validTree(self, n: int, edges: List[List[int]]) -> bool:
+        # Time Complexity (TC): O(n + e) where e is the number of edges,
+        # because we build the adjacency list and traverse each vertex and edge once.
+        # Space Complexity (SC): O(n), due to the adjacency list, visited set, and queue.
         if len(edges) > (n - 1):
             return False
 
