@@ -3,23 +3,27 @@ from typing import List
 
 class Solution:
     def jump(self, nums: List[int]) -> int:
-        max_reach = 0
-        times = 0
-        current_end = 0
-
-        if len(nums) == 1:
+        """
+        Time Complexity: O(n) — single pass over the array.
+        Space Complexity: O(1) — only a few integer variables used.
+        """
+        if len(nums) <= 1:
             return 0
 
-        for i, num in enumerate(nums):
-            if max_reach < i + num:
-                max_reach = i + num
-            
-            if i == current_end:
-                times += 1
-                current_end = max_reach
+        max_reach = 0
+        current_end = 0
+        jumps = 0
 
-                if max_reach >= len(nums) - 1:
-                    return times
+        for i in range(len(nums) - 1):
+            max_reach = max(max_reach, i + nums[i])
+
+            if i == current_end:
+                jumps += 1
+                current_end = max_reach
+                if current_end >= len(nums) - 1:
+                    break
+
+        return jumps
 
 
 # Test cases
