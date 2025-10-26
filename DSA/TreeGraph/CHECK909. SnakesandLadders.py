@@ -43,4 +43,3 @@ class Solution:
     print("Test case 1 - Expected: 4, Got:", result)
 
 
-from collections import deque

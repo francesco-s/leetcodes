@@ -1,5 +1,4 @@
 from typing import List
-import time
 
 
 # Input: nums = [1,12,-5,-6,50,3], k = 4

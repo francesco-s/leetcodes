@@ -1,6 +1,5 @@
 # O(N^2)
 from typing import List
-import sys
 
 
 class Solution:

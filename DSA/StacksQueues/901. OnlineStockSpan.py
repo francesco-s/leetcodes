@@ -15,7 +15,6 @@
 # stockSpanner.next(60);  // return 1
 # stockSpanner.next(75);  // return 4, because the last 4 prices (including today's price of 75) were less than or equal to today's price.
 # stockSpanner.next(85);  // return 6
-from collections import deque
 
 
 class StockSpanner:
