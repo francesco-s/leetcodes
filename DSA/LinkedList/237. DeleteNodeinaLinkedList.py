@@ -4,11 +4,13 @@ class ListNode:
         self.val = val
         self.next = next
 
+
 class Solution:
     def deleteNode(self, node):
         # Placeholder for the solution
         node.val = node.next.val
         node.next = node.next.next
+
 
 # Helper function to create a linked list from a list
 def create_linked_list(values):
@@ -21,6 +23,7 @@ def create_linked_list(values):
         current = current.next
     return head
 
+
 # Helper function to convert a linked list to a list
 def linked_list_to_list(head):
     result = []
@@ -28,6 +31,7 @@ def linked_list_to_list(head):
         result.append(head.val)
         head = head.next
     return result
+
 
 # Test cases
 solution = Solution()

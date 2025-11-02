@@ -1,6 +1,7 @@
 # LeetCode 238: Product of Array Except Self
 # https://leetcode.com/problems/product-of-array-except-self/
 
+
 class Solution:
     def productExceptSelf(self, nums):
         n = len(nums)
@@ -8,7 +9,7 @@ class Solution:
         left2right = [1] * n
         right2left = [1] * n
         res = [1] * n
-        
+
         for i in range(n):
             left2right[i] = left2right[i - 1] * nums[i]
 
@@ -25,7 +26,6 @@ class Solution:
                 res[i] = left2right[i - 1] * right2left[i + 1]
 
         return res
-        
 
     def productExceptSelfBruteForce(self, nums):
         n = len(nums)
@@ -38,8 +38,6 @@ class Solution:
                 output_array[i] *= nums[j]
 
         return output_array
-
-
 
 
 # Test cases

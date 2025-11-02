@@ -1,6 +1,15 @@
 class Solution:
     def letterCombinations(self, digits):
-        mapping = {'2':'abc', '3':'def', '4':'ghi','5':'jkl','6':'mno','7':'pqrs','8':'tuv', '9':'wxyz'}
+        mapping = {
+            "2": "abc",
+            "3": "def",
+            "4": "ghi",
+            "5": "jkl",
+            "6": "mno",
+            "7": "pqrs",
+            "8": "tuv",
+            "9": "wxyz",
+        }
 
         if not digits:
             return []
@@ -9,7 +18,7 @@ class Solution:
 
         def backtrack(i: int, path: list):
             if len(digits) == len(path):
-                res.append("".join(path)) 
+                res.append("".join(path))
                 return
 
             possible_letters = mapping[digits[i]]
@@ -21,7 +30,7 @@ class Solution:
 
         combinations = []
         backtrack(0, combinations)
-        
+
         return res
 
 

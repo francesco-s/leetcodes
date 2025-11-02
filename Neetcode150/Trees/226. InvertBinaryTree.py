@@ -8,8 +8,8 @@ class TreeNode:
         self.left = left
         self.right = right
 
-class Solution:
 
+class Solution:
     def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
         """
         Inverts a binary tree by recursively swapping the left and right children of every node.
@@ -34,7 +34,7 @@ class Solution:
     def invertTreeUnpacking(self, root):
         if root is None:
             return None
-        
+
         """
         # This doesn't work!
         if root is None:
@@ -50,17 +50,19 @@ class Solution:
 
         return root
 
+
 # Helper function to create binary tree from list (level-order traversal)
 from collections import deque
+
 
 def create_binary_tree(data):
     if not data:
         return None
-    
+
     iter_data = iter(data)
     root = TreeNode(next(iter_data))
     queue = deque([root])
-    
+
     while True:
         try:
             node = queue.popleft()
@@ -76,14 +78,15 @@ def create_binary_tree(data):
             break
     return root
 
+
 # Helper function to serialize tree to list (level-order) for printing
 def tree_to_list(root):
     if root is None:
         return []
-    
+
     result = []
     queue = deque([root])
-    
+
     while queue:
         node = queue.popleft()
         if node:
@@ -92,11 +95,12 @@ def tree_to_list(root):
             queue.append(node.right)
         else:
             result.append(None)
-    
+
     # Remove trailing None values
     while result and result[-1] is None:
         result.pop()
     return result
+
 
 # Test cases
 solution = Solution()

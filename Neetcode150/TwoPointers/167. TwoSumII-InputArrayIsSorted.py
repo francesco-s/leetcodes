@@ -9,7 +9,7 @@ class Solution:
         :rtype: List[int]
         """
 
-        left, right =  0, len(numbers) - 1
+        left, right = 0, len(numbers) - 1
 
         while left < right:
             _sum = numbers[left] + numbers[right]
@@ -23,8 +23,6 @@ class Solution:
 
         return [-1, -1]
 
-
-    
     def twoSumClassic(self, numbers, target):
         """
         :type numbers: List[int]
@@ -39,8 +37,9 @@ class Solution:
 
             if complement in complements:
                 return [complements[complement] + 1, i + 1]
-            
+
             complements[numbers[i]] = i
+
 
 # Test cases
 solution = Solution()

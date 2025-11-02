@@ -17,6 +17,7 @@ from typing import List
 # range [0,9]. 8 is the missing number in the range since it does not appear in nums.
 #
 
+
 class Solution:
     def missingNumber(nums: List[int]) -> int:
         expected_sum = len(nums) * (len(nums) + 1) // 2

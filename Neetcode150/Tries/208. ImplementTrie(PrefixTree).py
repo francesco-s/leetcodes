@@ -9,7 +9,7 @@ class TrieNode:
     def get(self, ch: str):
         return self.links[ord(ch) - ord("a")]
 
-    def put(self, ch: str, node: 'TrieNode'):
+    def put(self, ch: str, node: "TrieNode"):
         self.links[ord(ch) - ord("a")] = node
 
     def set_end(self):
@@ -21,7 +21,6 @@ class TrieNode:
 
 
 class Trie:
-
     def __init__(self):
         # TC: O(1)
         # SC: O(1)
@@ -71,19 +70,19 @@ class Trie:
 # Test cases (mirror canonical example)
 trie = Trie()
 trie.insert("apple")
-print("Test 1:", trie.search("apple"))    # Expected: True
-print("Test 2:", trie.search("app"))      # Expected: False
+print("Test 1:", trie.search("apple"))  # Expected: True
+print("Test 2:", trie.search("app"))  # Expected: False
 print("Test 3:", trie.startsWith("app"))  # Expected: True
 trie.insert("app")
-print("Test 4:", trie.search("app"))      # Expected: True
+print("Test 4:", trie.search("app"))  # Expected: True
 
 # More tests
 trie2 = Trie()
 for w in ["cat", "car", "care", "dog"]:
     trie2.insert(w)
-print("Test 5:", trie2.search("cat"))       # Expected: True
-print("Test 6:", trie2.search("ca"))        # Expected: False
-print("Test 7:", trie2.startsWith("ca"))    # Expected: True
+print("Test 5:", trie2.search("cat"))  # Expected: True
+print("Test 6:", trie2.search("ca"))  # Expected: False
+print("Test 7:", trie2.startsWith("ca"))  # Expected: True
 print("Test 8:", trie2.startsWith("care"))  # Expected: True
-print("Test 9:", trie2.search("care"))      # Expected: True
-print("Test 10:", trie2.search("career"))   # Expected: False
+print("Test 9:", trie2.search("care"))  # Expected: True
+print("Test 10:", trie2.search("career"))  # Expected: False

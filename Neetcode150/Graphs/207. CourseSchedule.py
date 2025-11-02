@@ -1,13 +1,13 @@
 from collections import deque
 
-class Solution:
 
+class Solution:
     def canFinish(self, numCourses, prerequisites):
         """
         :type numCourses: int
         :type prerequisites: List[List[int]]  # each [a, b] means b -> a edge
         :rtype: bool
-        
+
         Time Complexity: O(V + E), where V is the number of courses and E is the number of prerequisites.
         Space Complexity: O(V + E), to store the indegree list and the adjacency list.
         """
@@ -23,7 +23,7 @@ class Solution:
         for i in range(numCourses):
             if indegree[i] == 0:
                 q.append(i)
-        
+
         finished = 0
         while q:
             course_id = q.popleft()
@@ -36,27 +36,24 @@ class Solution:
         return finished == numCourses
 
 
-
-
-
 # Test cases
 solution = Solution()
 
 # Test case 1 (example: possible)
 n1 = 2
-pre1 = [[1,0]]
+pre1 = [[1, 0]]
 res1 = solution.canFinish(n1, pre1)
 print(f"Test case 1: {res1}")  # Expected: True
 
 # Test case 2 (example: cycle)
 n2 = 2
-pre2 = [[1,0],[0,1]]
+pre2 = [[1, 0], [0, 1]]
 res2 = solution.canFinish(n2, pre2)
 print(f"Test case 2: {res2}")  # Expected: False
 
 # Test case 3 (branching dependencies)
 n3 = 4
-pre3 = [[1,0],[2,0],[3,1],[3,2]]
+pre3 = [[1, 0], [2, 0], [3, 1], [3, 2]]
 res3 = solution.canFinish(n3, pre3)
 print(f"Test case 3: {res3}")  # Expected: True
 
@@ -68,13 +65,13 @@ print(f"Test case 4: {res4}")  # Expected: True
 
 # Test case 5 (self-loop impossible)
 n5 = 1
-pre5 = [[0,0]]
+pre5 = [[0, 0]]
 res5 = solution.canFinish(n5, pre5)
 print(f"Test case 5: {res5}")  # Expected: False
 
 # Test case 6 (disconnected cycles)
 n6 = 5
-pre6 = [[1,0],[0,1],[3,2],[2,3]]
+pre6 = [[1, 0], [0, 1], [3, 2], [2, 3]]
 res6 = solution.canFinish(n6, pre6)
 print(f"Test case 6: {res6}")  # Expected: False
 
@@ -84,19 +81,19 @@ solution = Solution()
 
 # Test case 1 (example: possible)
 n1 = 2
-pre1 = [[1,0]]
+pre1 = [[1, 0]]
 res1 = solution.canFinish(n1, pre1)
 print(f"Test case 1: {res1}")  # Expected: True
 
 # Test case 2 (example: cycle)
 n2 = 2
-pre2 = [[1,0],[0,1]]
+pre2 = [[1, 0], [0, 1]]
 res2 = solution.canFinish(n2, pre2)
 print(f"Test case 2: {res2}")  # Expected: False
 
 # Test case 3 (branching dependencies)
 n3 = 4
-pre3 = [[1,0],[2,0],[3,1],[3,2]]
+pre3 = [[1, 0], [2, 0], [3, 1], [3, 2]]
 res3 = solution.canFinish(n3, pre3)
 print(f"Test case 3: {res3}")  # Expected: True
 
@@ -108,12 +105,12 @@ print(f"Test case 4: {res4}")  # Expected: True
 
 # Test case 5 (self-loop impossible)
 n5 = 1
-pre5 = [[0,0]]
+pre5 = [[0, 0]]
 res5 = solution.canFinish(n5, pre5)
 print(f"Test case 5: {res5}")  # Expected: False
 
 # Test case 6 (disconnected cycles)
 n6 = 5
-pre6 = [[1,0],[0,1],[3,2],[2,3]]
+pre6 = [[1, 0], [0, 1], [3, 2], [2, 3]]
 res6 = solution.canFinish(n6, pre6)
 print(f"Test case 6: {res6}")  # Expected: False

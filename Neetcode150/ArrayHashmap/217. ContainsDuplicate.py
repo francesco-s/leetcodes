@@ -12,8 +12,9 @@ class Solution:
             counter[num] += 1
             if counter[num] > 1:
                 return True
-            
+
         return False
+
 
 # Test cases
 solution = Solution()

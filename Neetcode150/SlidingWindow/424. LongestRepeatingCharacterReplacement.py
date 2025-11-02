@@ -1,31 +1,31 @@
 class Solution:
     def characterReplacement(self, s: str, k: int) -> int:
         """
-        Find the length of the longest substring containing the same letter 
+        Find the length of the longest substring containing the same letter
         after replacing at most k characters using sliding window technique.
-        
+
         Time Complexity: O(n) where n is length of string
         Space Complexity: O(1) since we have at most 26 characters (constant space)
         """
         left, right = 0, 0  # Two pointers for sliding window
-        max_freq = 0        # Maximum frequency of any character in current window
-        
+        max_freq = 0  # Maximum frequency of any character in current window
+
         # Initialize frequency map for all unique characters
         chars_freq = dict()
         for char in set(s):
             chars_freq[char] = 0
-        
+
         while right < len(s):
             # Expand window by including character at right pointer
             chars_freq[s[right]] += 1
-            
+
             # Update max frequency seen so far (never decreases)
             # This is key optimization - we don't recalculate max_freq when shrinking
             max_freq = max(max_freq, chars_freq[s[right]])
-            
+
             # Calculate current window size
             window_size = right - left + 1
-            
+
             # Check if current window is invalid
             # window_size - max_freq = number of characters that need to be replaced
             if window_size - max_freq > k:
@@ -33,13 +33,14 @@ class Solution:
                 chars_freq[s[left]] -= 1
                 left += 1
                 # Note: we don't decrease max_freq here (key insight!)
-            
+
             # Move right pointer to expand window for next iteration (expand the window)
             right += 1
-        
+
         # At end of loop, right points one position beyond last character
         # So right - left gives us the length of the longest valid window found
         return right - left
+
 
 # Test cases
 solution = Solution()

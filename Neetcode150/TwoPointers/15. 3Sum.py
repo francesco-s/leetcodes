@@ -1,7 +1,4 @@
-
-
 class Solution:
-    
     def threeSum(self, nums):
         """
         :type nums: List[int]
@@ -34,8 +31,6 @@ class Solution:
                     right -= 1
 
         return res
-
-
 
 
 # Test cases

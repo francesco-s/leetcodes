@@ -3,12 +3,14 @@ import heapq
 
 
 class Solution:
-
     def kClosest(self, points: List[List[int]], k: int) -> List[List[int]]:
         def squared_distance(point: List[int]) -> int:
             return point[0] ** 2 + point[1] ** 2
 
-        points_dist = [(squared_distance(points[i]), [points[i][0], points[i][1]]) for i in range(len(points))]
+        points_dist = [
+            (squared_distance(points[i]), [points[i][0], points[i][1]])
+            for i in range(len(points))
+        ]
 
         heapq.heapify(points_dist)
 
@@ -38,6 +40,7 @@ class Solution:
     # def squared_distance(self, point: List[int]) -> int:
     #     """Calculate and return the squared Euclidean distance."""
     #     return point[0] ** 2 + point[1] ** 2
+
 
 solution = Solution()
 

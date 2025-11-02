@@ -9,12 +9,10 @@ class TreeNode:
 
 
 class Solution:
-
     def __init__(self):
         self.max_len = None
 
     def insertIntoBST(self, root: Optional[TreeNode], val: int) -> Optional[TreeNode]:
-
         if root is None:
             return TreeNode(val)
 
@@ -85,13 +83,21 @@ solution = Solution()
 
 values = [4, 2, 7, 1, 3]
 root = create_tree_from_list(values)
-print("Test case 0 - Expected: [4,2,7,1,3,5], Got:", create_list_from_tree(solution.insertIntoBST(root, val=5)))
+print(
+    "Test case 0 - Expected: [4,2,7,1,3,5], Got:",
+    create_list_from_tree(solution.insertIntoBST(root, val=5)),
+)
 
 values = [40, 20, 60, 10, 30, 50, 70]
 root = create_tree_from_list(values)
-print("Test case 1 - Expected: [40,20,60,10,30,50,70,null,null,25], Got:",
-      create_list_from_tree(solution.insertIntoBST(root, val=25)))
+print(
+    "Test case 1 - Expected: [40,20,60,10,30,50,70,null,null,25], Got:",
+    create_list_from_tree(solution.insertIntoBST(root, val=25)),
+)
 
 values = [4, 2, 7, 1, 3, None, None, None, None, None, None]
 root = create_tree_from_list(values)
-print("Test case 2 - Expected: [4,2,7,1,3,5], Got:", create_list_from_tree(solution.insertIntoBST(root, val=25)))
+print(
+    "Test case 2 - Expected: [4,2,7,1,3,5], Got:",
+    create_list_from_tree(solution.insertIntoBST(root, val=25)),
+)

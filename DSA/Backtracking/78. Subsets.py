@@ -5,7 +5,7 @@ class Solution:
         def backtracking(i, curr):
             if i > len(nums):
                 return
-            
+
             res.append(curr[:])
 
             for j in range(i, len(nums)):
@@ -13,7 +13,6 @@ class Solution:
                 backtracking(j + 1, curr)
                 curr.pop()
 
-        
         backtracking(0, [])
         return res
 
@@ -24,7 +23,9 @@ solution = Solution()
 # Test case 1
 nums1 = [1, 2, 3]
 result1 = solution.subsets(nums1)
-print(f"Test case 1: {result1}")  # Expected: [[], [1], [2], [1,2], [3], [1,3], [2,3], [1,2,3]]
+print(
+    f"Test case 1: {result1}"
+)  # Expected: [[], [1], [2], [1,2], [3], [1,3], [2,3], [1,2,3]]
 
 # Test case 2
 nums2 = []

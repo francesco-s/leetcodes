@@ -1,6 +1,7 @@
 # LeetCode 1: Two Sum
 # https://leetcode.com/problems/two-sum/
 
+
 class Solution:
     def twoSum(self, nums, target):
         complements = {}
@@ -10,8 +11,6 @@ class Solution:
             if complement in complements:
                 return [complements[complement], i]
             complements[num] = i
-            
-
 
 
 # Test cases

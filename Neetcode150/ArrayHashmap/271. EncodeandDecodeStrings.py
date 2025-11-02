@@ -1,27 +1,25 @@
 class Codec:
-
     def encodeNonAscii(self, strs):
         """Encodes a list of strings to a single string.
-        
+
         :type strs: List[str]
         :rtype: str
         """
-        return '😀'.join(strs)
+        return "😀".join(strs)
 
     def decodeNonAscii(self, s):
         """Decodes a single string to a list of strings.
-        
+
         :type s: str
         :rtype: List[str]
         """
-        return s.split('😀')
-    
+        return s.split("😀")
 
     def encode(self, strs):
-        encoded_string = ''
+        encoded_string = ""
         for s in strs:
             # Append the length, the delimiter, and the string itself.
-            encoded_string += str(len(s)) + '/:' + s
+            encoded_string += str(len(s)) + "/:" + s
 
         print(encoded_string)
         return encoded_string
@@ -30,12 +28,13 @@ class Codec:
         decoded_strings = []
         i = 0
         while i < len(s):
-            delim = s.find('/:', i)
+            delim = s.find("/:", i)
             length = int(s[i:delim])
-            str_ = s[delim+2 : delim+2+length]
+            str_ = s[delim + 2 : delim + 2 + length]
             decoded_strings.append(str_)
             i = delim + 2 + length
         return decoded_strings
+
 
 # Test cases
 codec = Codec()

@@ -3,12 +3,8 @@ class Solution:
         if len(s) % 2 == 1:  # Odd length strings can't be valid
             return False
 
-        map_parenthesis = {
-            ")" : "(",
-            "]": "[",
-            "}": "{"
-        }
-        
+        map_parenthesis = {")": "(", "]": "[", "}": "{"}
+
         stack = []
 
         for char in s:
@@ -16,8 +12,9 @@ class Solution:
                 stack.append(char)
             elif not stack or stack.pop() != map_parenthesis[char]:
                 return False
-        
+
         return not stack
+
 
 # Test cases
 solution = Solution()

@@ -1,5 +1,4 @@
 class Solution:
-
     def lengthOfLongestSubstringVerbose(self, s):
         """
         :type s: str
@@ -25,7 +24,7 @@ class Solution:
                     left += 1
                 left += 1
         return longest_sub
-    
+
     def lengthOfLongestSubstring(self, s: str) -> int:
         n = len(s)
         if n == 0:

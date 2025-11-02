@@ -2,7 +2,6 @@ from typing import List
 
 
 class Solution:
-
     def permute(self, nums: List[int]) -> List[List[int]]:
         """
         Generate all permutations of nums.
@@ -30,13 +29,16 @@ class Solution:
         dfs([])
         return res
 
+
 # Test cases
 solution = Solution()
 
 # Test case 1 (example-sized input)
-nums1 = [1,2,3]
+nums1 = [1, 2, 3]
 res1 = solution.permute(nums1)
-print(f"Test case 1: {res1}")  # Expected (any order): 6 perms like [[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]
+print(
+    f"Test case 1: {res1}"
+)  # Expected (any order): 6 perms like [[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]
 
 # Test case 2 (single element)
 nums2 = []
@@ -44,12 +46,12 @@ res2 = solution.permute(nums2)
 print(f"Test case 2: {res2}")  # Expected: []
 
 # Test case 3 (two elements)
-nums3 = [1,2]
+nums3 = [1, 2]
 res3 = solution.permute(nums3)
 print(f"Test case 3: {res3}")  # Expected (any order): [[1,2],[2,1]]
 
 # Test case 4 (four elements -> 24 permutations)
-nums4 = [1,2,3,4]
+nums4 = [1, 2, 3, 4]
 res4 = solution.permute(nums4)
 print(f"Test case 4 size: {len(res4)}")  # Expected size: 24
 

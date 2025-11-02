@@ -1,5 +1,4 @@
 class TimeMap:
-
     def __init__(self):
         # SC: O(N), where N is the total number of set operations (unique key-timestamp pairs)
         self.key_time_map = {}
@@ -20,6 +19,7 @@ class TimeMap:
             if t in self.key_time_map[key]:
                 return self.key_time_map[key][t]
         return ""
+
 
 # Test cases
 

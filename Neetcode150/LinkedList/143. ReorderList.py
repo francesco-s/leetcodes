@@ -7,6 +7,7 @@ class ListNode:
         self.val = val
         self.next = next
 
+
 class Solution:
     def reorderList(self, head: Optional[ListNode]) -> None:
         """
@@ -41,7 +42,7 @@ class Solution:
             tmp = second.next
             second.next = first
             second = tmp
-            
+
 
 # Helper function to create linked list from array
 def create_linked_list(arr):
@@ -54,6 +55,7 @@ def create_linked_list(arr):
         current = current.next
     return head
 
+
 # Helper function to convert linked list to array for printing
 def linked_list_to_array(head):
     result = []
@@ -62,6 +64,7 @@ def linked_list_to_array(head):
         result.append(current.val)
         current = current.next
     return result
+
 
 # Test cases
 solution = Solution()

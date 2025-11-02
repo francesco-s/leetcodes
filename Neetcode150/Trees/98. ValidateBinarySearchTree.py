@@ -8,24 +8,24 @@ class TreeNode:
         self.left = left
         self.right = right
 
-class Solution:
 
+class Solution:
     def isValidBST(self, root: Optional[TreeNode]) -> bool:
-        
         def dfs(node, left, right):
             if node is None:
                 return True
 
-            if not(left < node.val < right):
+            if not (left < node.val < right):
                 return False
 
             return dfs(node.left, left, node.val) and dfs(node.right, node.val, right)
 
-
         return dfs(root, float("-inf"), float("inf"))
+
 
 # Helpers: build a tree from level-order list and serialize back
 from collections import deque
+
 
 def build_tree(level):
     if not level:
@@ -46,6 +46,7 @@ def build_tree(level):
             q.append(node.right)
     return root
 
+
 def tree_to_level(root):
     if not root:
         return []
@@ -62,21 +63,22 @@ def tree_to_level(root):
         out.pop()
     return out
 
+
 # Test cases
 solution = Solution()
 
 # Test case 1 (valid)
-root1 = build_tree([2,1,3])
+root1 = build_tree([2, 1, 3])
 res1 = solution.isValidBST(root1)
 print(f"Test case 1: {res1}")  # Expected: True
 
 # Test case 2 (invalid: 4 under right of 5)
-root2 = build_tree([5,1,4,None,None,3,6])
+root2 = build_tree([5, 1, 4, None, None, 3, 6])
 res2 = solution.isValidBST(root2)
 print(f"Test case 2: {res2}")  # Expected: False
 
 # Test case 3 (invalid deeper: 3 in right subtree of 5)
-root3 = build_tree([5,4,6,None,None,3,7])
+root3 = build_tree([5, 4, 6, None, None, 3, 7])
 res3 = solution.isValidBST(root3)
 print(f"Test case 3: {res3}")  # Expected: False
 
@@ -86,11 +88,11 @@ res4 = solution.isValidBST(root4)
 print(f"Test case 4: {res4}")  # Expected: True
 
 # Test case 5 (duplicates should fail for strict BST)
-root5 = build_tree([2,2,2])
+root5 = build_tree([2, 2, 2])
 res5 = solution.isValidBST(root5)
 print(f"Test case 5: {res5}")  # Expected: False
 
 # Test case 6 (large valid)
-root6 = build_tree([10,5,15,3,7,12,18,1,4,6,9,11,13,16,20])
+root6 = build_tree([10, 5, 15, 3, 7, 12, 18, 1, 4, 6, 9, 11, 13, 16, 20])
 res6 = solution.isValidBST(root6)
 print(f"Test case 6: {res6}")  # Expected: True

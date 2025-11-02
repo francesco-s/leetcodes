@@ -5,13 +5,14 @@ from typing import List
 # Output: 12.75000
 # Explanation: Maximum average is (12 - 5 - 6 + 50) / 4 = 51 / 4 = 12.75
 
+
 class Solution:
     def findMaxAverage2(nums: List[int], k: int) -> float:
         len_nums = len(nums)
         i = 0
         max_sum = 0
         while i <= len_nums - k + 1:
-            current_window = nums[i:k + i]
+            current_window = nums[i : k + i]
             current_max_sum = sum(current_window)
             if max_sum < current_max_sum:
                 max_sum = current_max_sum

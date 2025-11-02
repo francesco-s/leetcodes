@@ -21,8 +21,6 @@ class Solution:
             return memo[(m, n)]
 
         return helper(m - 1, n - 1)
-    
-
 
     def uniquePathsWithObstacles(self, obstacleGrid):
         # Time Complexity: O(m * n), where m and n are the dimensions of the grid.
@@ -30,24 +28,23 @@ class Solution:
 
         if not obstacleGrid or obstacleGrid[0][0] == 1:
             return 0
-        
+
         m = len(obstacleGrid)
         n = len(obstacleGrid[0])
-        
-        dp = [[0] * n for _ in range(m)]
-        
-        dp[0][0] = 1
 
+        dp = [[0] * n for _ in range(m)]
+
+        dp[0][0] = 1
 
         for j in range(1, n):
             if obstacleGrid[0][j] == 0:
-                dp[0][j] = dp[0][j-1]
+                dp[0][j] = dp[0][j - 1]
             else:
                 dp[0][j] = 0
-        
+
         for i in range(1, m):
             if obstacleGrid[i][0] == 0:
-                dp[i][0] = dp[i-1][0]
+                dp[i][0] = dp[i - 1][0]
             else:
                 dp[i][0] = 0
 
@@ -58,22 +55,19 @@ class Solution:
                 else:
                     dp[i][j] = 0
 
-                
         return dp[m - 1][n - 1]
-
-        
 
 
 # Test cases
 solution = Solution()
 
 # Test case 1
-grid1 = [[0,0,0],[0,1,0],[0,0,0]]
+grid1 = [[0, 0, 0], [0, 1, 0], [0, 0, 0]]
 result1 = solution.uniquePathsWithObstacles(grid1)
 print(f"Test case 1: {result1}")  # Expected: 2
 
 # Test case 2
-grid2 = [[0,1],[0,0]]
+grid2 = [[0, 1], [0, 0]]
 result2 = solution.uniquePathsWithObstacles(grid2)
 print(f"Test case 2: {result2}")  # Expected: 1
 
@@ -83,6 +77,6 @@ result3 = solution.uniquePathsWithObstacles(grid3)
 print(f"Test case 3: {result3}")  # Expected: 0
 
 # Test case 4
-grid4 = [[0,0],[1,1],[0,0]]
+grid4 = [[0, 0], [1, 1], [0, 0]]
 result4 = solution.uniquePathsWithObstacles(grid4)
 print(f"Test case 4: {result4}")  # Expected: 0

@@ -8,20 +8,19 @@ class TreeNode:
         self.left = left
         self.right = right
 
-class Solution:
 
+class Solution:
     def kthSmallestInorder(self, root: Optional[TreeNode], k: int) -> int:
         def inorderTraversal(root) -> List[int]:
             if root is None:
                 return []
-        
+
             left = inorderTraversal(root.left)
             right = inorderTraversal(root.right)
 
             return left + [root.val] + right
 
-        return inorderTraversal(root)[k -1]
-    
+        return inorderTraversal(root)[k - 1]
 
     def kthSmallest(self, root: Optional[TreeNode], k: int) -> int:
         res = -1
@@ -30,7 +29,7 @@ class Solution:
             nonlocal k, res
             if root is None or k <= 0:
                 return
-            
+
             inorderTraversal(root.left)
 
             k -= 1
@@ -42,22 +41,23 @@ class Solution:
 
         inorderTraversal(root)
         return res
-    
-    
+
     def kthSmallestInorder(self, root: Optional[TreeNode], k: int) -> int:
         def inorderTraversal(root) -> List[int]:
             if root is None:
                 return []
-        
+
             left = inorderTraversal(root.left)
             right = inorderTraversal(root.right)
 
             return left + [root.val] + right
 
-        return inorderTraversal(root)[k -1]
+        return inorderTraversal(root)[k - 1]
+
 
 # Helpers: build a tree from level-order list and serialize back
 from collections import deque
+
 
 def build_tree(level):
     if not level:
@@ -78,6 +78,7 @@ def build_tree(level):
             q.append(node.right)
     return root
 
+
 def tree_to_level(root):
     if not root:
         return []
@@ -94,17 +95,18 @@ def tree_to_level(root):
         out.pop()
     return out
 
+
 # Test cases
 solution = Solution()
 
 # Test case 1 (example)
-root1 = build_tree([3,1,4,None,2])
+root1 = build_tree([3, 1, 4, None, 2])
 k1 = 1
 res1 = solution.kthSmallest(root1, k1)
 print(f"Test case 1: {res1}")  # Expected: 1
 
 # Test case 3 (k = size)
-root3 = build_tree([2,1,3])
+root3 = build_tree([2, 1, 3])
 k3 = 3
 res3 = solution.kthSmallest(root3, k3)
 print(f"Test case 3: {res3}")  # Expected: 3
@@ -116,7 +118,7 @@ res4 = solution.kthSmallest(root4, k4)
 print(f"Test case 4: {res4}")  # Expected: 1
 
 # Test case 5 (right-skewed increasing)
-root5 = build_tree([1,None,2,None,3,None,4])
+root5 = build_tree([1, None, 2, None, 3, None, 4])
 k5 = 2
 res5 = solution.kthSmallest(root5, k5)
 print(f"Test case 5: {res5}")  # Expected: 2

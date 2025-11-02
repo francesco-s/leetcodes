@@ -5,8 +5,8 @@ class Solution:
     def letterCombinations(self, digits: str) -> List[str]:
         """
         Generates all possible letter combinations that the number could represent.
-        
-        TC: O(4^n * n) - In the worst case (n digits with 4 letters each), 
+
+        TC: O(4^n * n) - In the worst case (n digits with 4 letters each),
             we generate 4^n combinations and concatenating each combination costs O(n).
         SC: O(4^n * n) - The space for storing the combinations, plus O(n) recursion stack space.
         """
@@ -24,18 +24,19 @@ class Solution:
 
         def dfs(i, comb):
             if len(comb) == len(digits):
-                res.append(''.join(comb))
+                res.append("".join(comb))
                 return
 
             for char in digit_to_char[digits[i]]:
                 comb.append(char)
                 dfs(i + 1, comb)
                 comb.pop()
-        
+
         if digits:
             dfs(0, [])
 
         return res
+
 
 # Test cases
 solution = Solution()
@@ -43,7 +44,9 @@ solution = Solution()
 # Test case 1 (example)
 digits1 = "23"
 res1 = solution.letterCombinations(digits1)
-print(f"Test case 1: {res1}")  # Expected: ["ad","ae","af","bd","be","bf","cd","ce","cf"] in any order
+print(
+    f"Test case 1: {res1}"
+)  # Expected: ["ad","ae","af","bd","be","bf","cd","ce","cf"] in any order
 
 # Test case 2 (empty -> empty list)
 digits2 = ""

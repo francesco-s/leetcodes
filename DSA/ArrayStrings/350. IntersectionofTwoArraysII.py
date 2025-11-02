@@ -1,12 +1,12 @@
 from collections import defaultdict, Counter
 
-class Solution:
 
+class Solution:
     def intersectCounter(self, nums1, nums2):
         return list((Counter(nums1) & Counter(nums2)).elements())
-    
+
     def intersectBrute(self, nums1, nums2):
-        i , j = 0, 0
+        i, j = 0, 0
         res = []
 
         if len(nums1) < len(nums2):
@@ -30,8 +30,7 @@ class Solution:
                     j += 1
                 i += 1
         return res
-    
-    
+
     def intersect(self, nums1, nums2):
         """
         Placeholder for the solution to LeetCode 350: Intersection of Two Arrays II.
@@ -50,8 +49,9 @@ class Solution:
             if key in nums2_hashmap:
                 count = min(nums1_hashmap[key], nums2_hashmap[key])
                 res.extend(count * [key])
-        
+
         return res
+
 
 # Test cases
 solution = Solution()

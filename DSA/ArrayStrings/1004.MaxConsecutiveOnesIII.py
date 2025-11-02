@@ -45,10 +45,14 @@ class Solution:
             if sum_zeros_before_after > k:
                 max_consecutive_onesIII = max(max_consecutive_onesIII, nums_ones + k)
             else:
-                max_consecutive_onesIII = max(max_consecutive_onesIII, nums_ones + sum_zeros_before_after)
+                max_consecutive_onesIII = max(
+                    max_consecutive_onesIII, nums_ones + sum_zeros_before_after
+                )
 
         return max_consecutive_onesIII
 
 
 print(Solution.longestOnes([1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0], k=2))
-print(Solution.longestOnes([0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1], k=3))
+print(
+    Solution.longestOnes([0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1], k=3)
+)

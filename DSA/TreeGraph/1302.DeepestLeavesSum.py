@@ -17,7 +17,6 @@ class Solution:
         self.current_sum = None
 
     def deepestLeavesSum(self, root: Optional[TreeNode]) -> int:
-
         self.current_sum = 0
         self.current_depth = 0
 
@@ -38,7 +37,11 @@ class Solution:
             dfs(root.left, 1 + current_depth)
             dfs(root.right, 1 + current_depth)
 
-            if root.left is None and root.right is None and current_depth == self.max_depth:
+            if (
+                root.left is None
+                and root.right is None
+                and current_depth == self.max_depth
+            ):
                 self.current_sum += root.val
 
             return

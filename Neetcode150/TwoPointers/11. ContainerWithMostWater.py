@@ -1,5 +1,4 @@
 class Solution:
-    
     def maxArea(self, height):
         """
         :type height: List[int]
@@ -9,14 +8,17 @@ class Solution:
         absolute_max = 0
 
         while left < right:
-            absolute_max = max(absolute_max, (right - left) * min(height[left], height[right]))
+            absolute_max = max(
+                absolute_max, (right - left) * min(height[left], height[right])
+            )
 
             if height[left] < height[right]:
                 left += 1
             else:
                 right -= 1
-        
+
         return absolute_max
+
 
 # Test cases
 solution = Solution()

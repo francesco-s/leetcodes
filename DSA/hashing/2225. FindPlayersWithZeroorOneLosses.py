@@ -4,7 +4,6 @@ from typing import List
 
 class Solution:
     def findWinners(matches: List[List[int]]) -> List[List[int]]:
-
         players = set()
         losers_count = defaultdict(int)
 
@@ -19,4 +18,19 @@ class Solution:
         return [sorted(no_losses), sorted(one_loss)]
 
 
-print(Solution.findWinners([[1, 3], [2, 3], [3, 6], [5, 6], [5, 7], [4, 5], [4, 8], [4, 9], [10, 4], [10, 9]]))
+print(
+    Solution.findWinners(
+        [
+            [1, 3],
+            [2, 3],
+            [3, 6],
+            [5, 6],
+            [5, 7],
+            [4, 5],
+            [4, 8],
+            [4, 9],
+            [10, 4],
+            [10, 9],
+        ]
+    )
+)

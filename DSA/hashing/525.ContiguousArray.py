@@ -26,7 +26,6 @@ from typing import List
 
 
 class Solution:
-
     def findMaxLength(nums: List[int]) -> int:
         count_dict = {0: -1}  # To handle the case when the subarray starts from index 0
 
@@ -62,7 +61,10 @@ class Solution:
             else:
                 count_dict[cumulative_count][1] = i + 1
 
-            max_len = max(max_len, count_dict[cumulative_count][-1] - count_dict[cumulative_count][0])
+            max_len = max(
+                max_len,
+                count_dict[cumulative_count][-1] - count_dict[cumulative_count][0],
+            )
             i += 1
 
         return max_len

@@ -1,5 +1,6 @@
 from typing import List
 
+
 class Solution:
     def answerQueries(self, nums: List[int], queries: List[int]) -> List[int]:
         nums.sort()
@@ -13,12 +14,13 @@ class Solution:
                 if num <= query:
                     count += 1
                     query -= num
-                else: 
+                else:
                     break
 
             res.append(count)
-        
+
         return res
+
 
 # Test cases
 solution = Solution()

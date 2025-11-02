@@ -1,5 +1,5 @@
 class ListNode:
-    def __init__(self, key, val, prev = None, _next = None):
+    def __init__(self, key, val, prev=None, _next=None):
         self.key = key
         self.val = val
         self.prev = prev
@@ -7,7 +7,6 @@ class ListNode:
 
 
 class LRUCache:
-
     def __init__(self, capacity):
         """
         :type capacity: int
@@ -20,7 +19,6 @@ class LRUCache:
         self.head.next = self.tail
         self.tail.prev = self.head
 
-
     def get(self, key):
         """
         :type key: int
@@ -28,13 +26,12 @@ class LRUCache:
         """
         if key not in self.dict:
             return -1
-        
+
         node = self.dict[key]
         self.remove(node)
         self.add(node)
 
         return node.val
-
 
     def put(self, key, value):
         """
@@ -54,7 +51,6 @@ class LRUCache:
             node_to_delete = self.head.next
             self.remove(node_to_delete)
             del self.dict[node_to_delete.key]
-        
 
     def add(self, node):
         prev_end = self.tail.prev
@@ -64,11 +60,11 @@ class LRUCache:
         node.next = self.tail
 
         self.tail.prev = node
-        
+
     def remove(self, node):
         node.prev.next = node.next
         node.next.prev = node.prev
-        
+
 
 # Test cases
 

@@ -3,6 +3,7 @@ class ListNode:
         self.val = val
         self.next = next
 
+
 class Solution:
     def hasCycle(self, head: ListNode) -> bool:
         # Placeholder for the solution
@@ -16,6 +17,7 @@ class Solution:
             curr = curr.next
         return False
 
+
 # Helper function to create a linked list from a list of values
 def create_linked_list(values, pos):
     if not values:
@@ -26,6 +28,7 @@ def create_linked_list(values, pos):
     if pos != -1:
         nodes[-1].next = nodes[pos]  # Create a cycle
     return nodes[0]
+
 
 # Test cases
 solution = Solution()

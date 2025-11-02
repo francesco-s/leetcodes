@@ -3,13 +3,12 @@ from typing import List
 
 
 class Solution:
-
     def ladderLength(self, beginWord: str, endWord: str, wordList: List[str]) -> int:
         queue = deque([(beginWord, 1)])
         seen = {beginWord}
 
         set_wl = set(wordList)
-        unique_char_string = set([c for c in ''.join(set_wl)])
+        unique_char_string = set([c for c in "".join(set_wl)])
 
         while queue:
             word, steps = queue.popleft()
@@ -17,7 +16,7 @@ class Solution:
                 return steps
             for char in unique_char_string:
                 for i in range(len(beginWord)):
-                    neigh = word[:i] + char + word[i + 1:]
+                    neigh = word[:i] + char + word[i + 1 :]
                     if neigh not in seen and neigh in set_wl:
                         seen.add(neigh)
                         queue.append((neigh, steps + 1))

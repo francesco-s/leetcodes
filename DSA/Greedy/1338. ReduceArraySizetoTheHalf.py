@@ -15,9 +15,8 @@ class Solution:
             half_len -= value
             if half_len <= 0:
                 break
-        
+
         return set_size
-            
 
 
 # Test cases
@@ -31,4 +30,6 @@ print(f"Test case 1: {result1}")  # Expected: 2 (one possible expected output)
 # Test case 2
 arr2 = [7, 7, 7, 7, 7, 7]
 result2 = solution.minSetSize(arr2)
-print(f"Test case 2: {result2}")  # Expected: 1 (since one removal of 7's removes the entire array)
+print(
+    f"Test case 2: {result2}"
+)  # Expected: 1 (since one removal of 7's removes the entire array)

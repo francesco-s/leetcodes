@@ -5,9 +5,11 @@ class TreeNode:
         self.left = left
         self.right = right
 
-class Solution:
 
-    def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
+class Solution:
+    def lowestCommonAncestor(
+        self, root: "TreeNode", p: "TreeNode", q: "TreeNode"
+    ) -> "TreeNode":
         """
         Time Complexity: O(h), where h is the height of the tree.
         Space Complexity: O(h), due to recursion stack. For a balanced BST, h = log n; for a skewed tree, h = n.
@@ -26,8 +28,10 @@ class Solution:
         else:
             return root
 
+
 # Helpers: build a BST from level-order list, find node by value, and serialize node
 from collections import deque
+
 
 def build_tree(level):
     if not level:
@@ -48,6 +52,7 @@ def build_tree(level):
             q.append(node.right)
     return root
 
+
 def find_node(root, val):
     # Since it's a BST, use BST property to locate the node by value
     cur = root
@@ -57,14 +62,16 @@ def find_node(root, val):
         cur = cur.left if val < cur.val else cur.right
     return None
 
+
 def node_val(node):
     return node.val if node else None
+
 
 # Test cases
 solution = Solution()
 
 # Test case 1 (classic example)
-root1 = build_tree([6,2,8,1,4,7,9,None,None,3,5])
+root1 = build_tree([6, 2, 8, 1, 4, 7, 9, None, None, 3, 5])
 p1 = find_node(root1, 2)
 q1 = find_node(root1, 8)
 res1 = solution.lowestCommonAncestor(root1, p1, q1)
@@ -96,7 +103,7 @@ res5 = solution.lowestCommonAncestor(root5, p5, q5)
 print(f"Test case 5: {node_val(res5)}")  # Expected: 1
 
 # Test case 6 (skewed BST)
-root6 = build_tree([5,3,None,2,None,1])  # left-skewed representation
+root6 = build_tree([5, 3, None, 2, None, 1])  # left-skewed representation
 p6 = find_node(root6, 2)
 q6 = find_node(root6, 1)
 res6 = solution.lowestCommonAncestor(root6, p6, q6)

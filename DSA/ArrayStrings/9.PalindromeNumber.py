@@ -10,16 +10,15 @@ def isPalindrome(x: int) -> bool:
         return True
 
     while x > x_reverted:
-        x_reverted = x_reverted * 10 + x % 10 
+        x_reverted = x_reverted * 10 + x % 10
         if x_reverted == 0:
             i *= 10
         x //= 10
 
     if x_reverted > x and x_reverted >= 10:
         x_reverted //= 10
-    
-    return x * i == x_reverted
 
+    return x * i == x_reverted
 
 
 print(isPalindrome(121))

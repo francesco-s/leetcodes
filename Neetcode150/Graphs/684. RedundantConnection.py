@@ -1,7 +1,7 @@
 from typing import List
 
 
-class UnionFind():
+class UnionFind:
     def __init__(self, n):
         # Time Complexity: O(n)
         # Space Complexity: O(n)
@@ -14,7 +14,7 @@ class UnionFind():
         if self.parent[node] != node:
             self.parent[node] = self.find(self.parent[node])
         return self.parent[node]
-    
+
     def union(self, u, v):
         # Time Complexity: O(α(n)) per union operation
         # Space Complexity: O(1)
@@ -23,7 +23,7 @@ class UnionFind():
 
         if root_u == root_v:
             return False
-        
+
         if self.rank[root_u] < self.rank[root_v]:
             self.parent[root_u] = root_v
         elif self.rank[root_u] > self.rank[root_v]:
@@ -49,36 +49,37 @@ class Solution:
         for u, v in edges:
             if not uf.union(u, v):
                 return [u, v]
-        
+
+
 # Test cases
 solution = Solution()
 
 # Test case 1 (example)
-edges1 = [[1,2],[1,3],[2,3]]
+edges1 = [[1, 2], [1, 3], [2, 3]]
 res1 = solution.findRedundantConnection(edges1)
 print(f"Test case 1: {res1}")  # Expected: [2,3]
 
 # Test case 2 (example larger)
-edges2 = [[1,2],[2,3],[3,4],[1,4],[1,5]]
+edges2 = [[1, 2], [2, 3], [3, 4], [1, 4], [1, 5]]
 res2 = solution.findRedundantConnection(edges2)
 print(f"Test case 2: {res2}")  # Expected: [1,4]
 
 # Test case 3 (simple no redundant)
-edges3 = [[1,2]]
+edges3 = [[1, 2]]
 res3 = solution.findRedundantConnection(edges3)
 print(f"Test case 3: {res3}")  # Expected: []
 
 # Test case 4 (chain plus cycle)
-edges4 = [[1,2],[2,3],[3,4],[4,2]]
+edges4 = [[1, 2], [2, 3], [3, 4], [4, 2]]
 res4 = solution.findRedundantConnection(edges4)
 print(f"Test case 4: {res4}")  # Expected: [4,2]
 
 # Test case 5 (self-loop, if allowed)
-edges5 = [[1,1]]
+edges5 = [[1, 1]]
 res5 = solution.findRedundantConnection(edges5)
 print(f"Test case 5: {res5}")  # Expected: [1,1] or []
 
 # Test case 6 (complex cycle)
-edges6 = [[1,2],[2,3],[3,1],[4,5]]
+edges6 = [[1, 2], [2, 3], [3, 1], [4, 5]]
 res6 = solution.findRedundantConnection(edges6)
 print(f"Test case 6: {res6}")  # Expected: [3,1]

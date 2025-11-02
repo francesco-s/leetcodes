@@ -1,5 +1,4 @@
 class Solution:
-
     def checkInclusion(self, s1: str, s2: str) -> bool:
         """
         Time Complexity (TC):
@@ -9,11 +8,11 @@ class Solution:
         Space Complexity (SC):
             - Two fixed-size arrays of length 26: O(26) = O(1)
         """
-                
+
         def ascii_calculator(s: str):
             res = [0] * 26
             for char in s:
-                res[ord(char) - ord('a')] += 1
+                res[ord(char) - ord("a")] += 1
             return res
 
         n, m = len(s1), len(s2)
@@ -28,14 +27,13 @@ class Solution:
 
         for i in range(n, m):
             # Update sliding window counts
-            window[ord(s2[i]) - ord('a')] += 1
-            window[ord(s2[i - n]) - ord('a')] -= 1
+            window[ord(s2[i]) - ord("a")] += 1
+            window[ord(s2[i - n]) - ord("a")] -= 1
 
             if window == s1_ascii:
                 return True
 
         return False
-
 
     def checkInclusionSort(self, s1: str, s2: str) -> bool:
         """
@@ -51,7 +49,7 @@ class Solution:
         """
 
         def sort(s: str):
-            return ''.join(sorted(s))
+            return "".join(sorted(s))
 
         s1_len = len(s1)
         s2_len = len(s2)
@@ -63,10 +61,6 @@ class Solution:
                 return True
 
         return False
-
-
-
-
 
 
 # Test cases

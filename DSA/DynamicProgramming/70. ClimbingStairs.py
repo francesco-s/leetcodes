@@ -1,9 +1,9 @@
 # Exercise: Climbing Stairs (70) – Easy
 # Link: https://leetcode.com/problems/climbing-stairs/
 
-class Solution:
-    def climbStairsBrute(self, n): #O(2^n) O(n)
 
+class Solution:
+    def climbStairsBrute(self, n):  # O(2^n) O(n)
         def helper(curr, n):
             if curr > n:
                 return 0
@@ -11,11 +11,10 @@ class Solution:
                 return 1
 
             return helper(curr + 1, n) + helper(curr + 2, n)
-            
 
         return helper(0, n)
 
-    def climbStairsMemo(self, n): # O(n) O(n)
+    def climbStairsMemo(self, n):  # O(n) O(n)
         memo = [0] * (n + 1)
 
         def helper(curr, n):
@@ -30,11 +29,11 @@ class Solution:
             return memo[curr]
 
         return helper(0, n)
-    
-    def climbStairs(self, n: int) -> int: # DP approach: O(n) O(n)
+
+    def climbStairs(self, n: int) -> int:  # DP approach: O(n) O(n)
         if n == 1 or n == 0:
             return 1
-        
+
         dp = [0 for i in range(n + 1)]
 
         dp[1] = 1
@@ -44,6 +43,7 @@ class Solution:
             dp[i] = dp[i - 1] + dp[i - 2]
 
         return dp[-1]
+
 
 # Test cases
 solution = Solution()

@@ -2,7 +2,7 @@ def convert(s: str, numRows: int) -> str:
     if numRows == 1 or numRows >= len(s):
         return s
 
-    rows = [''] * numRows
+    rows = [""] * numRows
 
     # Initialize the variables to traverse the string
     current_row = 0
@@ -16,7 +16,7 @@ def convert(s: str, numRows: int) -> str:
         current_row += 1 if going_down else -1
 
     # Concatenate all rows to form the final string
-    return ''.join(rows)
+    return "".join(rows)
 
 
 print(convert("PAYPALISHIRING", 3))  # Output: "PAHNAPLSIIGYIR"

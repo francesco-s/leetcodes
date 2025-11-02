@@ -13,13 +13,13 @@ class Solution:
             result = 0
             for num in nums:
                 result += ceil((1.0 * num) / middle)
-            
+
             if result <= threshold:
                 ans = middle
                 right = middle - 1
             else:
                 left = middle + 1
-        
+
         return ans
 
 

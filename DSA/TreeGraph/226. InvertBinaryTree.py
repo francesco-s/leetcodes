@@ -2,15 +2,16 @@
 from collections import deque
 from typing import Optional
 
+
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
         self.val = val
         self.left = left
         self.right = right
 
-class Solution:
-    def invertTree(self, root: TreeNode) -> TreeNode: # DFS recursive approach 
 
+class Solution:
+    def invertTree(self, root: TreeNode) -> TreeNode:  # DFS recursive approach
         if not root:
             return None
 
@@ -19,14 +20,14 @@ class Solution:
 
         root.left = right
         root.right = left
-        
+
         return root
-    
+
     def invertTreeBFS(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
         if not root:
             return None
-        
-        queue = deque([root]) # BFS approach
+
+        queue = deque([root])  # BFS approach
         while queue:
             curr = queue.popleft()
 
@@ -34,13 +35,15 @@ class Solution:
 
             if curr.left:
                 queue.append(curr.left)
-            
+
             if curr.right:
                 queue.append(curr.right)
 
         return root
-    
-    def invertTreeDFS(self, root: Optional[TreeNode]) -> Optional[TreeNode]: # DFS stack approach 
+
+    def invertTreeDFS(
+        self, root: Optional[TreeNode]
+    ) -> Optional[TreeNode]:  # DFS stack approach
         if not root:
             return None
 
@@ -58,7 +61,6 @@ class Solution:
         return root
 
 
-
 # Helper function to build a binary tree from a list
 def build_tree(values):
     if not values:
@@ -68,9 +70,12 @@ def build_tree(values):
     root = kids.pop()
     for node in nodes:
         if node:
-            if kids: node.left = kids.pop()
-            if kids: node.right = kids.pop()
+            if kids:
+                node.left = kids.pop()
+            if kids:
+                node.right = kids.pop()
     return root
+
 
 # Helper function to convert a binary tree to a list (level-order traversal)
 def tree_to_list(root):
@@ -88,6 +93,7 @@ def tree_to_list(root):
     while result and result[-1] is None:
         result.pop()
     return result
+
 
 # Test cases
 solution = Solution()

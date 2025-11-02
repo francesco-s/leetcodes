@@ -27,11 +27,11 @@ class Solution:
     def simplifyPath(path: str) -> str:
         stack = []
         for sub in path.split("/"):
-            if stack and sub == '..':
+            if stack and sub == "..":
                 stack.pop()
-            elif sub == '.' or sub == '':
+            elif sub == "." or sub == "":
                 continue
-            elif sub != '..':
+            elif sub != "..":
                 stack.append(sub)
 
         return "/" + "/".join(stack)

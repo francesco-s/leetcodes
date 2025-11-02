@@ -12,9 +12,9 @@ class Solution:
             if max_units < 0:
                 break
             apples += 1
-        
+
         return apples
-    
+
     def maxNumberOfApples(self, weight):
         cum_sum = 5000
         num_apples = 0

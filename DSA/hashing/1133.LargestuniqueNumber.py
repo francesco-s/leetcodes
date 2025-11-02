@@ -13,7 +13,6 @@ from typing import List
 
 
 class Solution:
-
     def largestUniqueNumber(nums: List[int]) -> int:
         num_count = defaultdict(int)
         max_unique = -1

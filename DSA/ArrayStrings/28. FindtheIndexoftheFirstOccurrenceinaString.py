@@ -9,14 +9,13 @@ class Solution:
         for i in range(0, len(haystack) - win_len + 1):
             if haystack[i : i + win_len] == needle:
                 return i
-            
+
         return -1
 
-
-    
     def strStrPython(self, haystack: str, needle: str) -> int:
         # Placeholder for the solution implementation
         return haystack.find(needle)
+
 
 # Test cases
 solution = Solution()

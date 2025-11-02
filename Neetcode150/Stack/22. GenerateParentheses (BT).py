@@ -7,11 +7,11 @@ class Solution:
                 answer.append("".join(cur_string))
                 return
             if left_count < n:
-                cur_string.append('(')
+                cur_string.append("(")
                 backtracking(cur_string, left_count + 1, right_count)
                 cur_string.pop()
             if right_count < left_count:
-                cur_string.append(')')
+                cur_string.append(")")
                 backtracking(cur_string, left_count, right_count + 1)
                 cur_string.pop()
 
@@ -19,13 +19,16 @@ class Solution:
 
         return answer
 
+
 # Test cases
 solution = Solution()
 
 # Test case 1
 n1 = 3
 result1 = solution.generateParenthesis(n1)
-print(f"Test case 1: {result1}")  # Expected: ["((()))","(()())","(())()","()(())","()()()"]
+print(
+    f"Test case 1: {result1}"
+)  # Expected: ["((()))","(()())","(())()","()(())","()()()"]
 
 # Test case 2
 n2 = 1
@@ -40,7 +43,9 @@ print(f"Test case 3: {result3}")  # Expected: ["(())","()()"]
 # Test case 4
 n4 = 4
 result4 = solution.generateParenthesis(n4)
-print(f"Test case 4: {result4}")  # Expected: ["(((())))","((()()))","((())())","((()))()","(()(()))","(()()())","(()())()","(())(())","(())()()","()((()))","()(()())","()(())()","()()(())","()()()()"]
+print(
+    f"Test case 4: {result4}"
+)  # Expected: ["(((())))","((()()))","((())())","((()))()","(()(()))","(()()())","(()())()","(())(())","(())()()","()((()))","()(()())","()(())()","()()(())","()()()()"]
 
 # Test case 5
 n5 = 0

@@ -15,7 +15,7 @@ class Solution:
         seen = 0
 
         for char in sentence:
-            mapped_index = ord(char) - ord('a')
+            mapped_index = ord(char) - ord("a")
             bit = 1 << mapped_index
             seen |= bit
         return seen == (1 << 26) - 1

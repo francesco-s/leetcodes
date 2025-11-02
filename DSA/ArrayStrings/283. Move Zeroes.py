@@ -18,7 +18,7 @@ class Solution:
                 nums[i], nums[j] = nums[j], nums[i]
                 j += 1
                 i += 1
-        
+
 
 # Test cases
 solution = Solution()

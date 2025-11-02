@@ -2,9 +2,9 @@ class Solution:
     def isValid(s: str) -> bool:
         stack = []
         matches = {
-            '(': ')',
-            '[': ']',
-            '{': '}',
+            "(": ")",
+            "[": "]",
+            "{": "}",
         }
         for char in s:
             if len(stack) > 0:
@@ -16,7 +16,7 @@ class Solution:
                 stack.append(char)
 
         return len(stack) == 0
-    
+
 
 ##########################################################
 # Rush 2
@@ -28,20 +28,20 @@ class Solution1:
 
         for c in s:
             if len(stack) > 0:
-                if c in ('(', '[', '{'):
+                if c in ("(", "[", "{"):
                     stack.append(c)
                 else:
                     popped = stack.pop()
-                    if popped == '(' and c == ')':
+                    if popped == "(" and c == ")":
                         continue
-                    elif popped == '[' and c == ']':
+                    elif popped == "[" and c == "]":
                         continue
-                    elif popped == '{' and c == '}':
+                    elif popped == "{" and c == "}":
                         continue
                     return False
             else:
                 stack.append(c)
-        
+
         return True
 
 

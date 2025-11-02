@@ -2,7 +2,6 @@ from typing import List
 
 
 class Solution:
-
     def search(self, nums: List[int], target: int) -> int:
         """
         Searches for a target value in a rotated sorted array.
@@ -41,17 +40,18 @@ class Solution:
 
         return binarySearch(left, n - 1, target)
 
+
 # Test cases
 solution = Solution()
 
 # Test case 1
-nums1 = [4,5,6,7,0,1,2]
+nums1 = [4, 5, 6, 7, 0, 1, 2]
 target1 = 0
 result1 = solution.search(nums1, target1)
 print(f"Test case 1: {result1}")  # Expected: 4
 
 # Test case 2
-nums2 = [4,5,6,7,0,1,2]
+nums2 = [4, 5, 6, 7, 0, 1, 2]
 target2 = 3
 result2 = solution.search(nums2, target2)
 print(f"Test case 2: {result2}")  # Expected: -1
@@ -69,13 +69,13 @@ result4 = solution.search(nums4, target4)
 print(f"Test case 4: {result4}")  # Expected: 0
 
 # Test case 5
-nums5 = [3,4,5,6,1,2]
+nums5 = [3, 4, 5, 6, 1, 2]
 target5 = 1
 result5 = solution.search(nums5, target5)
 print(f"Test case 5: {result5}")  # Expected: 4
 
 # Test case 6
-nums6 = [5,1,3]
+nums6 = [5, 1, 3]
 target6 = 3
 result6 = solution.search(nums6, target6)
 print(f"Test case 6: {result6}")  # Expected: 2

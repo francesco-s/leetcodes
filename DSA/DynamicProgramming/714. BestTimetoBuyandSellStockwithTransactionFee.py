@@ -1,5 +1,5 @@
 class Solution:
-    def maxProfit(self, prices, fee): 
+    def maxProfit(self, prices, fee):
         """
         Dynamic Programming solution.
         Time Complexity: O(n), where n is the number of days (len(prices)).
@@ -21,6 +21,7 @@ class Solution:
 
         # The answer is the max profit when not holding any stock at the end
         return free[-1]
+
 
 # Test cases
 solution = Solution()

@@ -7,13 +7,16 @@ class ListNode:
         self.val = val
         self.next = next
 
+
 class Solution:
     # Time Complexity: O(n + m), where n and m are the lengths of list1 and list2.
     # Space Complexity: O(1) for mergeTwoListsOptimal (in-place), O(n + m) for mergeTwoLists (new nodes).
-    def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
+    def mergeTwoLists(
+        self, list1: Optional[ListNode], list2: Optional[ListNode]
+    ) -> Optional[ListNode]:
         dummy = ListNode(0)
         current = dummy
-        
+
         while list1 and list2:
             if list1.val <= list2.val:
                 current.next = list1
@@ -22,14 +25,16 @@ class Solution:
                 current.next = list2
                 list2 = list2.next
             current = current.next
-        
+
         current.next = list1 if list1 else list2
-    
+
         return dummy.next
 
     # Time Complexity: O(n + m), where n and m are the lengths of list1 and list2.
     # Space Complexity: O(n + m), since new nodes are created for the merged list.
-    def mergeTwoListsBad(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
+    def mergeTwoListsBad(
+        self, list1: Optional[ListNode], list2: Optional[ListNode]
+    ) -> Optional[ListNode]:
         if not list1:
             return list2
 
@@ -55,15 +60,16 @@ class Solution:
             else:
                 curr3.next = ListNode(curr2.val)
                 curr2 = curr2.next
-            
+
             curr3 = curr3.next
-        
+
         if curr1:
             curr3.next = curr1
         else:
             curr3.next = curr2
 
         return new_head
+
 
 # Helper function to create linked list from array
 def create_linked_list(arr):
@@ -76,6 +82,7 @@ def create_linked_list(arr):
         current = current.next
     return head
 
+
 # Helper function to convert linked list to array for printing
 def linked_list_to_array(head):
     result = []
@@ -84,6 +91,7 @@ def linked_list_to_array(head):
         result.append(current.val)
         current = current.next
     return result
+
 
 # Test cases
 solution = Solution()

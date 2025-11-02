@@ -9,9 +9,9 @@ class Solution:
         ast = []
 
         for i, c in enumerate(s):
-            if c == '(':
+            if c == "(":
                 par.append(i)
-            elif c == '*':
+            elif c == "*":
                 ast.append(i)
             else:
                 if par:
@@ -26,7 +26,7 @@ class Solution:
                 return False
 
         return not par
-    
+
     def checkValidStringGreedy(self, s: str) -> bool:
         """
         Greedy check using low/high possible count of open parentheses.
@@ -40,18 +40,19 @@ class Solution:
         """
         low = high = 0
         for c in s:
-            if c == '(':
+            if c == "(":
                 low += 1
                 high += 1
-            elif c == ')':
+            elif c == ")":
                 low = max(low - 1, 0)
                 high -= 1
             else:  # c == '*'
                 low = max(low - 1, 0)  # treat '*' as ')'
-                high += 1             # treat '*' as '('
+                high += 1  # treat '*' as '('
             if high < 0:
                 return False
         return low == 0
+
 
 # Test cases
 solution = Solution()

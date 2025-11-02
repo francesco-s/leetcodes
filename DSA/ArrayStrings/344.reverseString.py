@@ -15,22 +15,17 @@ class Solution:
 
     def reverseString1(s: List[str]) -> None:
         for i in range(0, len(s) // 2):
-            s[i], s[-i -1] = s[-i -1], s[i]
+            s[i], s[-i - 1] = s[-i - 1], s[i]
         return s
-    
 
     def helper(self, s, left, right):
         if left >= right:
             return
         s[left], s[right - 1] = s[right - 1], s[left]
         self.helper(s, left + 1, right - 1)
-        
+
     def reverseString(self, s: List[str]) -> None:
-        return self.helper(s, 0 , len(s))
-    
-    
-
-
+        return self.helper(s, 0, len(s))
 
 
 # Test cases

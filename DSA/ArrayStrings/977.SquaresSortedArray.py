@@ -6,6 +6,7 @@ from typing import List
 # Explanation: After squaring, the array becomes [16,1,0,9,100].
 # After sorting, it becomes [0,1,9,16,100].
 
+
 class Solution:
     def sortedSquares(nums: List[int]) -> List[int]:
         n = len(nums)
@@ -20,7 +21,9 @@ class Solution:
         pos_ptr = non_neg_index
         result = []
         while neg_ptr >= 0 or pos_ptr < n:
-            if neg_ptr >= 0 and (pos_ptr >= n or nums[neg_ptr] ** 2 < nums[pos_ptr] ** 2):
+            if neg_ptr >= 0 and (
+                pos_ptr >= n or nums[neg_ptr] ** 2 < nums[pos_ptr] ** 2
+            ):
                 result.append(nums[neg_ptr] ** 2)
                 neg_ptr -= 1
             else:

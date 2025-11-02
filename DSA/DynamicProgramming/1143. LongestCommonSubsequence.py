@@ -3,9 +3,8 @@ from functools import lru_cache
 
 class Solution:
     def longestCommonSubsequenceBad(self, text1: str, text2: str) -> int:
-    
         @lru_cache(maxsize=None)
-        def dp(i, j): 
+        def dp(i, j):
             # Time Complexity:
             # Each (i, j) pair is memoized, so at most len(text1) * len(text2) calls.
             # However, text2.find() is O(m) for each call, so overall worst-case is O(n * m^2),
@@ -20,35 +19,34 @@ class Solution:
 
             option_1 = dp(i + 1, j)
 
-            first_occurence = text2.find(text1[i], j) # O(m) per call
+            first_occurence = text2.find(text1[i], j)  # O(m) per call
 
             option_2 = 0
             if first_occurence != -1:
                 option_2 = 1 + dp(i + 1, first_occurence + 1)
 
             return max(option_1, option_2)
-        
+
         return dp(0, 0)
-    
 
-    def longestCommonSubsequenceTD(self, text1: str, text2: str) -> int: # O(n * m) and O(n * m)
-
+    def longestCommonSubsequenceTD(
+        self, text1: str, text2: str
+    ) -> int:  # O(n * m) and O(n * m)
         @lru_cache(maxsize=None)
         def dp(i, j):
-
             if len(text1) == i or len(text2) == j:
                 return 0
-
 
             if text1[i] == text2[j]:
                 return 1 + dp(i + 1, j + 1)
             else:
                 return max(dp(i + 1, j), dp(i, j + 1))
-        
-        return dp(0, 0)
-    
 
-    def longestCommonSubsequence(self, text1: str, text2: str) -> int: # O(n * m) and O(n * m)
+        return dp(0, 0)
+
+    def longestCommonSubsequence(
+        self, text1: str, text2: str
+    ) -> int:  # O(n * m) and O(n * m)
         n = len(text1)
         m = len(text2)
         dp_grid = [[0] * (m + 1) for _ in range(n + 1)]
@@ -61,8 +59,6 @@ class Solution:
                     dp_grid[i][j] = max(dp_grid[i + 1][j], dp_grid[i][j + 1])
 
         return dp_grid[0][0]
-                
-
 
 
 # Test cases

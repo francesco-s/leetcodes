@@ -16,6 +16,7 @@
 # Output: [3,4,6,16,17]
 from typing import List
 
+
 class Solution:
     def runningSum(nums: List[int]) -> List[int]:
         for i in range(1, len(nums)):

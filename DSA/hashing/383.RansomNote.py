@@ -2,7 +2,6 @@ from collections import Counter, defaultdict
 
 
 class Solution:
-
     def canConstruct(ransomNote: str, magazine: str) -> bool:
         count_dict = defaultdict(int)
 

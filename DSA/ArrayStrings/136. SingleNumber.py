@@ -5,7 +5,7 @@ class Solution(object):
         :rtype: int
         """
         return 2 * sum(set(nums)) - sum(nums)
-    
+
     def singleNumber2(self, nums):
         """
         :type nums: List[int]
@@ -38,4 +38,3 @@ print("Test case 2:", solution.singleNumber(nums))  # Expected output: 4
 # Test case 3: Single number is 0
 nums = [0, 1, 1]
 print("Test case 3:", solution.singleNumber(nums))  # Expected output: 0
-

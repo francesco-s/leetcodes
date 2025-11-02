@@ -16,13 +16,14 @@ class Solution:
                 return
 
             for j in range(i, len(s)):
-                if is_palindrome(s[i:j + 1]):
-                    substring.append(s[i:j + 1])
+                if is_palindrome(s[i : j + 1]):
+                    substring.append(s[i : j + 1])
                     dfs(j + 1, substring)
                     substring.pop()
 
         dfs(0, [])
         return res
+
 
 # Test cases
 solution = Solution()
@@ -45,7 +46,9 @@ print(f"Test case 3: {r3}")  # Expected: [["a","a","a"],["a","aa"],["aa","a"],["
 # Test case 4 (palindrome word)
 s4 = "racecar"
 r4 = solution.partition(s4)
-print(f"Test case 4 size: {len(r4)}")  # Expected >= 3; includes ["r","a","c","e","c","a","r"], ["r","aceca","r"], ["racecar"]
+print(
+    f"Test case 4 size: {len(r4)}"
+)  # Expected >= 3; includes ["r","a","c","e","c","a","r"], ["r","aceca","r"], ["racecar"]
 
 # Test case 5 (no two-letter palindrome)
 s5 = "abc"

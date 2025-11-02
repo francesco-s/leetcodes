@@ -6,23 +6,20 @@ class Solution:
             if len(cur_string) == 2 * n:
                 answer.append("".join(cur_string))
                 return
-            
+
             if left_count < n:
                 cur_string.append("(")
                 backtracking(cur_string, left_count + 1, right_count)
                 cur_string.pop()
-
 
             if right_count < left_count:
                 cur_string.append(")")
                 backtracking(cur_string, left_count, right_count + 1)
                 cur_string.pop()
 
-            
-
-        
         backtracking([], 0, 0)
         return answer
+
 
 # Test cases
 solution = Solution()
@@ -30,7 +27,9 @@ solution = Solution()
 # Test case 1
 n1 = 3
 result1 = solution.generateParenthesis(n1)
-print(f"Test case 1 (n = {n1}): {result1}")  # Expected: ["((()))", "(()())", "(())()", "()(())", "()()()"] ())
+print(
+    f"Test case 1 (n = {n1}): {result1}"
+)  # Expected: ["((()))", "(()())", "(())()", "()(())", "()()()"] ())
 
 # Test case 2
 n2 = 1

@@ -13,7 +13,6 @@ class Solution:
         return -sum(piles)
 
 
-
 solution = Solution()
 
 piles = [5, 4, 9]

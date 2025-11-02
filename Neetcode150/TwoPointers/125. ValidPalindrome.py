@@ -1,5 +1,4 @@
 class Solution:
-    
     def isPalindrome(self, s):
         """
         :type s: str
@@ -21,7 +20,7 @@ class Solution:
             left -= 1
 
         return True
-    
+
 
 # Test cases
 solution = Solution()

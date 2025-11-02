@@ -1,12 +1,12 @@
 # Definition for a binary tree node.
 from typing import List
 
-class Solution:
 
+class Solution:
     def inorderTraversal(root) -> List[int]:
         if root is None:
             return []
-        
+
         left = Solution.inorderTraversal(root.left)
         right = Solution.inorderTraversal(root.right)
 
@@ -25,24 +25,23 @@ class Solution:
             curr = curr.right
 
         return res
-    
+
     def preorderTraversalStack(root):
         if not root:
             return []
-        
+
         stack, result = [root], []
-        
+
         while stack:
             node = stack.pop()
             result.append(node.val)
-            
+
             if node.right:
                 stack.append(node.right)
             if node.left:
                 stack.append(node.left)
-        
-        return result
 
+        return result
 
 
 class TreeNode:
@@ -109,23 +108,24 @@ def create_list_from_tree(root):
 
 solution = Solution()
 
-values = [1,None,2,3]
+values = [1, None, 2, 3]
 root = create_tree_from_list(values)
-print("Test case 1:", Solution.inorderTraversal(root)) #  [1, 3, 2]
+print("Test case 1:", Solution.inorderTraversal(root))  #  [1, 3, 2]
 
-values = [1,None,2,3]
+values = [1, None, 2, 3]
 root = create_tree_from_list(values)
-print("Test case 1:", Solution.preorderTraversalStack(root)) #  [1, 3, 2]
+print("Test case 1:", Solution.preorderTraversalStack(root))  #  [1, 3, 2]
 
 
-
-values = [1,2,3,4,5,None,8,None,None,6,7,9]
+values = [1, 2, 3, 4, 5, None, 8, None, None, 6, 7, 9]
 root = create_tree_from_list(values)
-print("Test case 2:", Solution.inorderTraversal(root)) # Output: [4,2,6,5,7,1,3,9,8]
+print("Test case 2:", Solution.inorderTraversal(root))  # Output: [4,2,6,5,7,1,3,9,8]
 
-values = [1,2,3,4,5,None,8,None,None,6,7,9]
+values = [1, 2, 3, 4, 5, None, 8, None, None, 6, 7, 9]
 root = create_tree_from_list(values)
-print("Test case 2:", Solution.preorderTraversalStack(root)) # Output: [4,2,6,5,7,1,3,9,8]
+print(
+    "Test case 2:", Solution.preorderTraversalStack(root)
+)  # Output: [4,2,6,5,7,1,3,9,8]
 
 # values = [1,2,3,4,5,None,8,None,None,6,7,9]
 # root = create_tree_from_list(values)

@@ -2,11 +2,12 @@ import heapq
 from collections import defaultdict
 from typing import List
 
+
 class Twitter:
     def __init__(self):
         self.timer = 0
-        self.tweets = defaultdict(list)       # userId -> [(timestamp, tweetId), ...]
-        self.following = defaultdict(set)     # userId -> {followeeId, ...}
+        self.tweets = defaultdict(list)  # userId -> [(timestamp, tweetId), ...]
+        self.following = defaultdict(set)  # userId -> {followeeId, ...}
 
     def postTweet(self, userId: int, tweetId: int) -> None:
         """
@@ -14,7 +15,7 @@ class Twitter:
         Space Complexity: O(1) per tweet (total O(T) for all tweets)
         """
         self.timer += 1
-        self.tweets[userId].append((-self.timer, tweetId)) # max-heap
+        self.tweets[userId].append((-self.timer, tweetId))  # max-heap
 
     def follow(self, followerId: int, followeeId: int) -> None:
         """
@@ -51,7 +52,6 @@ class Twitter:
             else:
                 break
         return feed
-
 
 
 # Test cases (mirror the canonical example)

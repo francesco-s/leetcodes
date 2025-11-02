@@ -3,6 +3,7 @@ from typing import List
 # LeetCode 128: Longest Consecutive Sequence
 # https://leetcode.com/problems/longest-consecutive-sequence/
 
+
 class Solution:
     def longestConsecutive(self, nums: List[int]) -> int:
         """
@@ -30,7 +31,7 @@ class Solution:
                     current_num += 1
 
                 longest_consecutive = max(current_consecutive, longest_consecutive)
-        
+
         return longest_consecutive
 
 

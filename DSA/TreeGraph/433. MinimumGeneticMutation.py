@@ -3,7 +3,6 @@ from typing import List
 
 
 class Solution:
-
     def minMutation(self, startGene: str, endGene: str, bank: List[str]) -> int:
         queue = deque([(startGene, 0)])
         seen = {startGene}
@@ -12,9 +11,9 @@ class Solution:
             gene, steps = queue.popleft()
             if gene == endGene:
                 return steps
-            for char in 'ACGT':
+            for char in "ACGT":
                 for i in range(8):
-                    neigh = gene[:i] + char + gene[i + 1:]
+                    neigh = gene[:i] + char + gene[i + 1 :]
                     if neigh not in seen and neigh in bank:
                         seen.add(neigh)
                         queue.append((neigh, steps + 1))

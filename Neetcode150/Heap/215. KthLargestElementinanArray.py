@@ -3,7 +3,7 @@ from typing import List
 
 
 class Solution:
-    #TODO: use quicksort for O(n) time
+    # TODO: use quicksort for O(n) time
 
     def findKthLargest(self, nums: List[int], k: int) -> int:
         """
@@ -30,28 +30,29 @@ class Solution:
             heappush(max_heap, -num)
 
         while k > 0:
-            k_largest = heappop(max_heap) 
+            k_largest = heappop(max_heap)
             k -= 1
 
         return -k_largest
+
 
 # Test cases
 solution = Solution()
 
 # Test case 1 (example)
-nums1 = [3,2,1,5,6,4]
+nums1 = [3, 2, 1, 5, 6, 4]
 k1 = 2
 res1 = solution.findKthLargest(nums1, k1)
 print(f"Test case 1: {res1}")  # Expected: 5
 
 # Test case 2 (example)
-nums2 = [3,2,3,1,2,4,5,5,6]
+nums2 = [3, 2, 3, 1, 2, 4, 5, 5, 6]
 k2 = 4
 res2 = solution.findKthLargest(nums2, k2)
 print(f"Test case 2: {res2}")  # Expected: 4
 
 # Test case 3 (k = 1 -> max)
-nums3 = [7,7,7]
+nums3 = [7, 7, 7]
 k3 = 1
 res3 = solution.findKthLargest(nums3, k3)
 print(f"Test case 3: {res3}")  # Expected: 7

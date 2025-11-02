@@ -9,10 +9,10 @@ class Solution:
     def topKFrequent(self, nums, k):
         if k == len(nums):
             return nums
-        
+
         counter = Counter(nums)
         heap = []
-    
+
         for num, freq in counter.items():
             heapq.heappush(heap, (-freq, num))
 

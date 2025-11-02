@@ -30,12 +30,12 @@ class Solution:
 solution = Solution()
 
 # Test case 1 (example)
-nums1 = [2,3,1,1,4]
+nums1 = [2, 3, 1, 1, 4]
 res1 = solution.jump(nums1)
 print(f"Test case 1: {res1}")  # Expected: 2
 
 # Test case 2 (example)
-nums2 = [2,3,0,1,4]
+nums2 = [2, 3, 0, 1, 4]
 res2 = solution.jump(nums2)
 print(f"Test case 2: {res2}")  # Expected: 2
 
@@ -50,11 +50,11 @@ res4 = solution.jump(nums4)
 print(f"Test case 4: {res4}")  # Expected: 0
 
 # Test case 5 (large jumps)
-nums5 = [5,9,3,2,1,0,2,3,3,1,0,0]
+nums5 = [5, 9, 3, 2, 1, 0, 2, 3, 3, 1, 0, 0]
 res5 = solution.jump(nums5)
 print(f"Test case 5: {res5}")  # Expected: 3
 
 # Test case 6 (multiple jumps needed)
-nums6 = [1,1,1,1,1]
+nums6 = [1, 1, 1, 1, 1]
 res6 = solution.jump(nums6)
 print(f"Test case 6: {res6}")  # Expected: 4
