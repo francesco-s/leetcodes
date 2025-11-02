@@ -3,6 +3,12 @@ from typing import List
 
 class Solution:
     def merge(self, intervals: List[List[int]]) -> List[List[int]]:
+        """
+        Merge overlapping intervals.
+
+        Time Complexity: O(n log n) due to sorting (n = len(intervals))
+        Space Complexity: O(n) extra for the output (plus O(log n) for Timsort recursion/aux)
+        """
         merged = []
         intervals.sort(key=lambda x: x[0])
 
