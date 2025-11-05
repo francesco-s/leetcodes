@@ -19,12 +19,17 @@ class Solution:
         return self.plusOne(digits[:-1]) + [0] # The [0] acts as the result of 1 + 9 = 1 + [0]
     
     def plusOne(self, digits: List[int]) -> List[int]:
+        """
+        Increment the integer represented by the list `digits` by one.
+        TC: O(n)
+        SC: O(1) extra space (O(n) if counting the new list returned for the all-9s case)
+        """
         for i in range(len(digits) - 1, -1, -1):
             if digits[i] < 9:
                 digits[i] += 1
                 return digits
             digits[i] = 0
-        
+
         return [1] + digits
 
 # Test cases
