@@ -16,7 +16,7 @@ class Solution:
                 square += (n % 10) ** 2
                 n //= 10
             return square
-        
+
         while n != 1:
             n = sum_of_square(n)
             if n in visited:
@@ -24,6 +24,7 @@ class Solution:
             visited.add(n)
 
         return True
+
 
 # Test cases
 solution = Solution()

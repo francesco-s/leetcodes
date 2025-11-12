@@ -17,7 +17,7 @@ class Solution:
                 res[i + j] += int(num1[i]) * int(num2[j])
                 res[i + j + 1] += res[i + j] // 10
                 res[i + j] %= 10
-        
+
         while len(res) > 1 and res[-1] == 0:
             res.pop()
 

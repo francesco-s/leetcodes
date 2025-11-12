@@ -16,7 +16,7 @@ class CountSquares:
     def add(self, point: List[int]) -> None:
         self.pts_count[tuple(point)] += 1
         self.pts.append(point)
-        
+
     def count(self, point: List[int]) -> int:
         res = 0
         px, py = point
@@ -24,9 +24,8 @@ class CountSquares:
             if x == px or y == py:
                 continue
             if abs(py - y) == abs(px - x):
-                res += self.pts_count[(x, py)] * self.pts_count[(px, y)]  
+                res += self.pts_count[(x, py)] * self.pts_count[(px, y)]
         return res
-
 
 
 # Test cases

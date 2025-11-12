@@ -4,7 +4,7 @@ import heapq
 class Solution:
     def maxNumberOfApplesHeap(self, weight):
         heapq.heapify(weight)
-        apples = units = 0
+        apples = 0
         max_units = 5000
 
         while weight:

@@ -1,5 +1,4 @@
 class Solution:
-
     def myPow(self, x: float, n: int) -> float:
         """
         Time Complexity: O(|n|) — we perform |n| multiplications in the loop.
@@ -14,13 +13,14 @@ class Solution:
         for i in range(abs(n)):
             res *= x
 
-        return res if n >= 0 else 1/res
-    
+        return res if n >= 0 else 1 / res
+
     def myPow(self, x: float, n: int) -> float:
         """
         Time Complexity: O(log |n|) — we halve the exponent each recursive call.
         Space Complexity: O(log |n|) — recursion stack depth.
         """
+
         def helper(x, n):
             if x == 0:
                 return 0
@@ -32,6 +32,7 @@ class Solution:
 
         pow = helper(x, abs(n))
         return pow if n >= 0 else 1 / pow
+
 
 # Test cases
 solution = Solution()
