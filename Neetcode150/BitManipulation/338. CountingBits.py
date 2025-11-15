@@ -2,16 +2,15 @@ from typing import List
 
 
 class Solution:
-
     def countBits(self, n: int) -> List[int]:
         """
         Count the number of 1-bits in binary representation of each number from 0 to n.
-        
+
         Time Complexity: O(n log n) - for each number, we count bits in O(log n)
         Space Complexity: O(1) - excluding the output array
         """
         res = []
-        
+
         for num in range(n + 1):
             ones = 0
             curr = num
