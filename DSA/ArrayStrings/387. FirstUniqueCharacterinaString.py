@@ -1,4 +1,6 @@
 from collections import defaultdict
+
+
 class Solution:
     def firstUniqChar(self, s: str) -> int:
         char_counter = defaultdict(int)
@@ -9,29 +11,22 @@ class Solution:
         for index, char in enumerate(s):
             if char_counter[char] == 1:
                 return index
-            
+
         return -1
-
-
-
 
     def firstUniqCharBrute(self, s: str) -> int:
         # Placeholder for the solution
         if len(s) == 1:
             return 0
-        
+
         for i in range(0, len(s)):
             for j in range(0, len(s)):
-
                 if s[i] == s[j] and j != i:
                     break
                 if j == len(s) - 1:
                     return i
 
-                
         return -1
-
-
 
 
 # Test cases

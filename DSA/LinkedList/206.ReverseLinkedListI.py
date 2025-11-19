@@ -27,7 +27,8 @@ class Solution:
             prev = current
             current = next
         return prev
-    
+
+
 def create_linked_list(lst):
     dummy = ListNode()
     current = dummy

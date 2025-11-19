@@ -21,7 +21,13 @@ class Solution:
             left_max = dfs(root.left)
             right_max = dfs(root.right)
 
-            self.max_sum = max(root.val, self.max_sum, root.val + left_max + right_max, root.val + left_max, root.val + right_max)
+            self.max_sum = max(
+                root.val,
+                self.max_sum,
+                root.val + left_max + right_max,
+                root.val + left_max,
+                root.val + right_max,
+            )
 
             return max(root.val, root.val + left_max, root.val + right_max)
 

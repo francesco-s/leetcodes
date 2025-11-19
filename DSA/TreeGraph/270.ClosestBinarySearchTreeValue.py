@@ -10,7 +10,6 @@ class TreeNode:
 
 
 class Solution:
-
     def __init__(self):
         self.closest_diff = None
         self.closest = None
@@ -20,7 +19,6 @@ class Solution:
         self.closest_diff = math.inf
 
         def dfs(root, target):
-
             if root is None:
                 return
 
@@ -31,10 +29,12 @@ class Solution:
 
             current_diff = abs(root.val - target)
 
-            if current_diff < self.closest_diff or (current_diff == self.closest_diff and root.val < self.closest):
+            if current_diff < self.closest_diff or (
+                current_diff == self.closest_diff and root.val < self.closest
+            ):
                 self.closest = root.val
                 self.closest_diff = current_diff
-                
+
             return
 
         dfs(root, target)

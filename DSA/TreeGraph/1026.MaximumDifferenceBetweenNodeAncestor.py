@@ -9,7 +9,6 @@ class TreeNode:
 
 
 class Solution:
-
     def maxAncestorDiff(self, root: Optional[TreeNode]) -> int:
         if root is None:
             return 0

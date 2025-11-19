@@ -3,7 +3,6 @@ from typing import List
 
 
 class Solution:
-
     def snakesAndLadders(self, board: List[List[int]]) -> int:
         n = len(board)
         cells = [None] * (n**2 + 1)
@@ -24,8 +23,7 @@ class Solution:
             curr = q.popleft()
             for next in range(curr + 1, min(curr + 6, n**2) + 1):
                 row, column = cells[next]
-                destination = (board[row][column] if board[row][column] != -1
-                               else next)
+                destination = board[row][column] if board[row][column] != -1 else next
                 if dist[destination] == -1:
                     dist[destination] = dist[curr] + 1
                     q.append(destination)
@@ -33,14 +31,16 @@ class Solution:
         print(dist)
         return dist[n * n]
 
-
     solution = Solution()
 
-    board = [[-1, -1, -1, -1, -1, -1], [-1, -1, -1, -1, -1, -1], [-1, -1, -1, -1, -1, -1], [-1, 35, -1, -1, 13, -1],
-             [-1, -1, -1, -1, -1, -1], [-1, 15, -1, -1, -1, -1]]
+    board = [
+        [-1, -1, -1, -1, -1, -1],
+        [-1, -1, -1, -1, -1, -1],
+        [-1, -1, -1, -1, -1, -1],
+        [-1, 35, -1, -1, 13, -1],
+        [-1, -1, -1, -1, -1, -1],
+        [-1, 15, -1, -1, -1, -1],
+    ]
 
     result = solution.snakesAndLadders(board)
     print("Test case 1 - Expected: 4, Got:", result)
-
-
-from collections import deque

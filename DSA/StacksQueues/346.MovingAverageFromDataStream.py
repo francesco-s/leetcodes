@@ -2,7 +2,6 @@ from collections import deque
 
 
 class MovingAverage:
-
     def __init__(self, size: int):
         self.size = size
         self.queue = deque()
@@ -21,7 +20,6 @@ class MovingAverage:
 
 
 class MovingAverage2:
-
     def __init__(self, size: int):
         self.size = size
         self.queue = deque()

@@ -17,7 +17,9 @@ class ListNode:
 
 
 class Solution:
-    def reverseBetween2(head: Optional[ListNode], left: int, right: int) -> Optional[ListNode]:
+    def reverseBetween2(
+        head: Optional[ListNode], left: int, right: int
+    ) -> Optional[ListNode]:
         current = head
         to_invert = []
 
@@ -25,11 +27,13 @@ class Solution:
             to_invert.append(current.val)
             current = current.next
 
-        to_invert[left - 1:right] = to_invert[left - 1:right][::-1]
+        to_invert[left - 1 : right] = to_invert[left - 1 : right][::-1]
         print(to_invert)
         return create_linked_list(to_invert)
 
-    def reverseBetween(head: Optional[ListNode], left: int, right: int) -> Optional[ListNode]:
+    def reverseBetween(
+        head: Optional[ListNode], left: int, right: int
+    ) -> Optional[ListNode]:
         if right - left == 0:
             return head
 

@@ -5,10 +5,10 @@ class Solution:
         """
         if not strs:
             return ""
-                
+
         if len(strs) == 1:
             return strs[0]
-        
+
         longest_common_prefix = 0
 
         for index, char in enumerate(strs[0]):
@@ -20,8 +20,6 @@ class Solution:
                     return strs[0][:longest_common_prefix]
 
         return strs[0][:longest_common_prefix]
-
-            
 
 
 # Test cases

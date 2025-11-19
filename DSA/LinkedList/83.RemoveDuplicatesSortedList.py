@@ -24,7 +24,6 @@ class Solution:
         return res.next
 
 
-
 def create_linked_list(lst):
     dummy = ListNode()
     current = dummy

@@ -1,5 +1,6 @@
 import math
 
+
 class Solution:
     def maxProfit(self, prices):
         """
@@ -10,7 +11,6 @@ class Solution:
         largest_diff = 0
         min_sofar = math.inf
 
-
         for i in range(0, len(prices)):
             if prices[i] < min_sofar:
                 min_sofar = prices[i]
@@ -18,7 +18,6 @@ class Solution:
                 largest_diff = max(largest_diff, prices[i] - min_sofar)
 
         return largest_diff
-
 
     def maxProfitBrute(self, prices):
         """
@@ -34,9 +33,6 @@ class Solution:
                     max_profit = prices[j] - prices[i]
 
         return max_profit
-                
-
-
 
 
 # Test cases

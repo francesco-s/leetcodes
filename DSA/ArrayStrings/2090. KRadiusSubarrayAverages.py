@@ -2,7 +2,6 @@ from typing import List
 
 
 class Solution:
-
     def getAverages(nums: List[int], k: int) -> List[int]:
         if k > len(nums) // 2:
             return [-1] * len(nums)
@@ -13,7 +12,7 @@ class Solution:
         current_sum = 0
 
         if window_size <= len(nums):
-            current_sum = sum(nums[0: 2 * k + 1])
+            current_sum = sum(nums[0 : 2 * k + 1])
             res.append(current_sum // window_size)
 
         for i in range(k + 1, len(nums) - k):
@@ -33,7 +32,7 @@ class Solution:
         res = [-1] * k
 
         for i in range(k, len(nums) - k):
-            res.append(sum(nums[i - k: i + k + 1]) // (2 * k + 1))
+            res.append(sum(nums[i - k : i + k + 1]) // (2 * k + 1))
 
         res.extend([-1] * k)
 

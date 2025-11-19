@@ -4,13 +4,15 @@ from typing import List
 class Solution:
     def canReachRecursive(self, arr: List[int], start: int) -> bool:
         seen = set()
+
         def dfs(index):
             if 0 <= index < len(arr) and arr[index] >= 0 and index not in seen:
-
                 if arr[index] == 0:
                     return True
 
-                seen.add(index)  # first solution using set: visited index to avoid maximum recursion depth exceeded
+                seen.add(
+                    index
+                )  # first solution using set: visited index to avoid maximum recursion depth exceeded
                 # arr[index] = -arr[index]  # second solution: make the value negative to mark as visited.
 
                 return dfs(index + arr[index]) or dfs(index - arr[index])

@@ -3,7 +3,6 @@ from typing import List
 
 
 class Solution:
-
     def maximumDetonation(self, bombs: List[List[int]]) -> int:
         graph = defaultdict(list)
 
@@ -16,7 +15,7 @@ class Solution:
 
         # Optimized code
         for i, (x1, y1, r1) in enumerate(bombs):
-            r1_squared = r1 ** 2
+            r1_squared = r1**2
             for j in range(i + 1, len(bombs)):
                 x2, y2, _ = bombs[j]
                 distance_squared = (x1 - x2) ** 2 + (y1 - y2) ** 2

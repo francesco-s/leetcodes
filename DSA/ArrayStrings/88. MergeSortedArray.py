@@ -6,7 +6,7 @@ class Solution:
         p1 = m - 1
         p2 = n - 1
 
-        for i in range(-1, -(n + m + 1) , -1):
+        for i in range(-1, -(n + m + 1), -1):
             if p2 < 0:
                 break
             if p1 >= 0 and nums1[p1] > nums2[p2]:
@@ -16,10 +16,6 @@ class Solution:
                 nums1[i] = nums2[p2]
                 p2 -= 1
 
-
-
-
-                
 
 # Test cases
 solution = Solution()

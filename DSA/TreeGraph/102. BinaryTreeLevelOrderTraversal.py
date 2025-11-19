@@ -4,6 +4,8 @@ class TreeNode(object):
         self.val = val
         self.left = left
         self.right = right
+
+
 from collections import deque
 
 
@@ -15,24 +17,23 @@ class Solution(object):
         """
         if not root:
             return []
-        
+
         result = []
 
-        def helper (node, level):
+        def helper(node, level):
             if len(result) == level:
                 result.append([])
 
             result[level].append(node.val)
-            
+
             if node.left:
                 helper(node.left, level + 1)
             if node.right:
                 helper(node.right, level + 1)
 
-
         helper(root, 0)
         return result
-        
+
 
 # Helper function to construct a binary tree from a list
 def build_tree(values):
@@ -57,6 +58,7 @@ def build_tree(values):
 
     return root
 
+
 # Test cases
 root = build_tree([3, 9, 20, None, None, 15, 7])
 print(Solution().levelOrder(root))  # Output: [[3], [9, 20], [15, 7]]
@@ -66,5 +68,3 @@ print(Solution().levelOrder(root))  # Output: [[1]]
 
 root = build_tree([])
 print(Solution().levelOrder(root))  # Output: []
-
- 

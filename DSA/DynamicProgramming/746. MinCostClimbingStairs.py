@@ -2,9 +2,9 @@
 # Link: https://leetcode.com/problems/min-cost-climbing-stairs/
 from typing import List
 
-class Solution:
-    def minCostClimbingStairs(self, cost: List[int]) -> int: # Bottom Up O(n) O(n)
 
+class Solution:
+    def minCostClimbingStairs(self, cost: List[int]) -> int:  # Bottom Up O(n) O(n)
         n = len(cost)
         dp = [0 for i in range(n + 1)]
 
@@ -12,23 +12,24 @@ class Solution:
             dp[i] = min(dp[i - 1] + cost[i - 1], dp[i - 2] + cost[i - 2])
 
         return dp[n]
-    
-    def minCostClimbingStairsTD(self, cost: List[int]) -> int: # Top Down O(n) O(n)
+
+    def minCostClimbingStairsTD(self, cost: List[int]) -> int:  # Top Down O(n) O(n)
         def dp(i):
             if i <= 1:
                 return 0
-            
+
             if i in memo:
                 return memo[i]
-            
+
             memo[i] = min(dp(i - 1) + cost[i - 1], dp(i - 2) + cost[i - 2])
             return memo[i]
-        
+
         memo = {}
         return dp(len(cost))
 
-    def minCostClimbingStairsGreedy(self, cost: List[int]) -> int: # Greedy not working solution
-
+    def minCostClimbingStairsGreedy(
+        self, cost: List[int]
+    ) -> int:  # Greedy not working solution
         i = 0
         total_cost = 0
 
@@ -43,8 +44,9 @@ class Solution:
                 i += 2
 
             total_cost += _min
-        
+
         return total_cost
+
 
 # Test cases
 solution = Solution()

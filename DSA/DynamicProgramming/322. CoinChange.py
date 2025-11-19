@@ -2,14 +2,13 @@
 # Link: https://leetcode.com/problems/coin-change/
 
 
-
 class Solution:
-    def coinChange(self, coins, amount): # 3. BOTTOM-UP DP 
+    def coinChange(self, coins, amount):  # 3. BOTTOM-UP DP
         if amount == 0:
             return 0
-        
+
         dp = [amount + 1] * (amount + 1)
-        dp[0] = 0 
+        dp[0] = 0
 
         for i in range(1, amount + 1):
             for coin in coins:
@@ -18,57 +17,57 @@ class Solution:
                 dp[i] = min(dp[i], dp[i - coin] + 1)
 
         return dp[-1] if dp[-1] != amount + 1 else -1
-    
+
     # 2. Recursion + MEMOIZATION (Top-Down DP)
     def coinChange_memo(coins, amount):
         memo = {}
-        
+
         def helper(remaining):
             # Controlla se già calcolato
             if remaining in memo:
                 return memo[remaining]
-            
+
             if remaining == 0:
                 return 0
             if remaining < 0:
-                return float('inf')
-            
-            min_coins = float('inf')
+                return float("inf")
+
+            min_coins = float("inf")
             for coin in coins:
                 result = helper(remaining - coin)
-                if result != float('inf'):
+                if result != float("inf"):
                     min_coins = min(min_coins, 1 + result)
-            
+
             memo[remaining] = min_coins
             return min_coins
-        
+
         if amount == 0:
             return 0
-        
+
         result = helper(amount)
-        return result if result != float('inf') else -1
-    
+        return result if result != float("inf") else -1
+
     # 1. Recursion (Time Limit Exceeded)
     def coinChange_recursive(coins, amount):
         def helper(remaining):
             if remaining == 0:
                 return 0
             if remaining < 0:
-                return float('inf')
-            
-            min_coins = float('inf')
+                return float("inf")
+
+            min_coins = float("inf")
             for coin in coins:
                 result = helper(remaining - coin)
-                if result != float('inf'):
+                if result != float("inf"):
                     min_coins = min(min_coins, 1 + result)
-            
+
             return min_coins
-        
+
         if amount == 0:
             return 0
-        
+
         result = helper(amount)
-        return result if result != float('inf') else -1
+        return result if result != float("inf") else -1
 
 
 # Test cases

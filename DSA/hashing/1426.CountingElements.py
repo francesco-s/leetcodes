@@ -13,6 +13,7 @@ from typing import List
 # Output: 0
 # Explanation: No numbers are counted, cause there is no 2, 4, 6, or 8 in arr.
 
+
 class Solution:
     def countElements(arr: List[int]) -> int:
         hashset = set(arr)

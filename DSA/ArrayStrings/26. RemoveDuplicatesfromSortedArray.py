@@ -11,7 +11,6 @@ class Solution(object):
                 nums[insertIndex] = nums[i]
                 insertIndex = insertIndex + 1
         return insertIndex
-            
 
 
 # Example usage:
@@ -20,5 +19,5 @@ nums = [1, 1, 2]
 # where _ represents irrelevant values beyond the new length.
 print(Solution.removeDuplicates(nums))  # Output: 2
 
-nums = [0,0,1,1,1,2,2,3,3,4]
+nums = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4]
 print(Solution.removeDuplicates(nums))  # Output: 5

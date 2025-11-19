@@ -12,6 +12,7 @@ class Solution:
 
         return max_units
 
+
 # Test cases
 solution = Solution()
 

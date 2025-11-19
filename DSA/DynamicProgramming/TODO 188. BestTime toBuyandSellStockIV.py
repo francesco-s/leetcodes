@@ -3,6 +3,7 @@ class Solution:
         # TODO: Implement solution
         pass
 
+
 # Test cases
 solution = Solution()
 

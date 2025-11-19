@@ -1,11 +1,9 @@
 # O(N^2)
 from typing import List
-import sys
 
 
 class Solution:
     def maxSubArray(nums: List[int]):
-
         """
         Kadane solution
         :return:
@@ -27,7 +25,8 @@ class Solution:
 
     def maxSubArray3(nums: List[int]) -> int:
         def dp(i):
-            if i >= len(nums): return 0
+            if i >= len(nums):
+                return 0
             if i not in memo:
                 take = nums[i] + dp(i + 1)
                 dontake = nums[i]
@@ -43,7 +42,8 @@ class Solution:
 
     def maxSubArray2(nums: List[int]) -> int:
         def dp(i, csum):
-            if i >= len(nums): return csum
+            if i >= len(nums):
+                return csum
             if (i, csum) not in memo:
                 take = dp(i + 1, csum + nums[i])
                 dontake = dp(i + 1, nums[i])
@@ -54,7 +54,8 @@ class Solution:
 
         def solve(i, curr_sum):
             nonlocal l
-            if i >= len(nums): return
+            if i >= len(nums):
+                return
             take = dp(i + 1, curr_sum + nums[i])
             dontake = dp(i + 1, nums[i])
             if take > dontake:
@@ -65,10 +66,10 @@ class Solution:
                 return solve(i + 1, nums[i])
 
         memo = {}
-        maxlen = dp(0, float('-inf'))
+        maxlen = dp(0, float("-inf"))
 
         l = []
-        solve(0, float('-inf'))
+        solve(0, float("-inf"))
         print(l)
 
         return maxlen

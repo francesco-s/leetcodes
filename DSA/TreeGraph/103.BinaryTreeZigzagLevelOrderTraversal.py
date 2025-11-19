@@ -12,7 +12,6 @@ class TreeNode:
 
 class Solution:
     def zigzagLevelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
-
         def bfs(root: Optional[TreeNode]):
             if not root:
                 return []

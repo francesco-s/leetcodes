@@ -19,10 +19,9 @@ from typing import List
 # - 2 is underlined in nums2 = [1,2,3,4]. The next greater element is 3.
 # - 4 is underlined in nums2 = [1,2,3,4]. There is no next greater element, so the answer is -1.
 
+
 class Solution:
-
     def nextGreaterElement(nums1: List[int], nums2: List[int]) -> List[int]:
-
         found = False
         found_greater = False
         res = []

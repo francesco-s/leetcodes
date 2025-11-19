@@ -1,6 +1,7 @@
 # LeetCode Problem 66: Plus One
 # Problem description: https://leetcode.com/problems/plus-one/
 
+
 class Solution(object):
     def plusOne(self, digits):
         """
@@ -21,7 +22,7 @@ class Solution(object):
                     digits[-i] += 1
                     return digits
             return [1] + digits
-            
+
 
 # Test cases
 solution = Solution()

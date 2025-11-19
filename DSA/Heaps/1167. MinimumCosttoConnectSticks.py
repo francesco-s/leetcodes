@@ -16,7 +16,6 @@ class Solution:
         return cum_cost
 
 
-
 solution = Solution()
 
 sticks = [2, 4, 3]
@@ -24,8 +23,7 @@ sticks = [2, 4, 3]
 result = solution.connectSticks(sticks)
 print("Test case 1 - Expected: 14, Got:", result)
 
-sticks = [1,8,3,5]
+sticks = [1, 8, 3, 5]
 
 result = solution.connectSticks(sticks)
 print("Test case 1 - Expected: 30, Got:", result)
-

@@ -2,12 +2,13 @@ class Solution:
     def isPalindrome(self, s: str) -> bool:
         # Placeholder for the actual implementation
         new_string = ""
-                
+
         for char in s.lower():
             if char in "qwertyuiopasdfghjklzxcvbnm1234567890":
                 new_string += char
 
         return new_string == new_string[::-1]
+
 
 # Test cases
 solution = Solution()

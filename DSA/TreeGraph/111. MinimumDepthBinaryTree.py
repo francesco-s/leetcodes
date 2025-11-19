@@ -10,7 +10,6 @@ class TreeNode:
 
 
 class Solution:
-
     def minDepthDONTWORK(self, root: Optional[TreeNode]) -> int:
         def dfs(root):
             if root is None:

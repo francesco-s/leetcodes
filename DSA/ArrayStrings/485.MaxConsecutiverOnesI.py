@@ -5,7 +5,12 @@ class Solution:
     def longestOnes1(nums: List[int]) -> int:
         len_nums = len(nums)
         i = 0
-        nums_ones, nums_zeros_before, nums_zeros_after, max_consecutive_onesIII = 0, 0, 0, 0
+        nums_ones, nums_zeros_before, nums_zeros_after, max_consecutive_onesIII = (
+            0,
+            0,
+            0,
+            0,
+        )
 
         while i < len_nums:
             nums_ones = 0
@@ -25,10 +30,7 @@ class Solution:
             max_consecutive_onesIII = max(max_consecutive_onesIII, nums_ones)
 
         return max_consecutive_onesIII
-    
 
-
-    
     def longestOnes(nums: List[int]) -> int:
         max_cons_ones = 0
         global_max = 0

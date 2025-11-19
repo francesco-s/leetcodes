@@ -4,6 +4,7 @@ class ListNode:
         self.val = val
         self.next = next
 
+
 class Solution:
     def removeNthFromEnd(self, head: ListNode, n: int) -> ListNode:
         # Placeholder for the solution implementation
@@ -20,8 +21,9 @@ class Solution:
             fast = fast.next
 
         slow.next = slow.next.next
-        
+
         return dummy.next
+
 
 # Helper function to create a linked list from a list
 def create_linked_list(values):
@@ -34,6 +36,7 @@ def create_linked_list(values):
         current = current.next
     return head
 
+
 # Helper function to convert a linked list to a list
 def linked_list_to_list(head):
     result = []
@@ -41,6 +44,7 @@ def linked_list_to_list(head):
         result.append(head.val)
         head = head.next
     return result
+
 
 # Test cases
 solution = Solution()

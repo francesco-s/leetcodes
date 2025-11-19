@@ -7,6 +7,7 @@ def isBadVersion(version: int) -> bool:
     bad_version = 5  # Example: Assume version 5 is the first bad version
     return version >= bad_version
 
+
 class Solution:
     def firstBadVersion(self, n: int) -> int:
         left = 1
@@ -18,9 +19,9 @@ class Solution:
                 right = middle
             else:
                 left = middle + 1
-        
+
         return left
-    
+
     def firstBadVersionOverflow(self, n: int) -> int:
         # Placeholder for the actual implementation
         left, right = 1, n
@@ -31,6 +32,7 @@ class Solution:
             else:
                 left = mid + 1
         return left
+
 
 # Test cases
 solution = Solution()
