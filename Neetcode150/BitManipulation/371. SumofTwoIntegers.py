@@ -16,7 +16,7 @@ class Solution:
             a = sum_without_carry & mask
             b = carry & mask
         
-        return a if a <= max_int else ~(a ^ mask)
+        return a if a <= max_int else ~(a ^ mask) # the same as a - 2**32
 
 # Test cases
 solution = Solution()
