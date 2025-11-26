@@ -1,10 +1,10 @@
 from typing import List
 
 
-# Time Complexity: O(n), where n is the number of houses. We solve two linear subproblems, each O(n).
-# Space Complexity: O(n), due to the memoization array used in each subproblem.
 
 class Solution:
+    # Time Complexity: O(n), where n is the number of houses. We solve two linear subproblems, each O(n).
+    # Space Complexity: O(n), due to the memoization array used in each subproblem.
     def rob(self, nums: List[int]) -> int:
         if len(nums) == 1:
             return nums[0]
