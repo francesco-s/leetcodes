@@ -1,5 +1,6 @@
 from typing import List
 
+
 class Solution:
     def wordBreak(self, s: str, wordDict: List[str]) -> bool:
         # Time Complexity: O(n^2 * m)
@@ -8,14 +9,14 @@ class Solution:
         # Space Complexity: O(n + k)
         # - n: memoization dictionary stores results for each position (0 to n)
         # - k: word_set stores all unique words from wordDict
-        
+
         memo = {}
         n = len(s)
         word_set = set(wordDict)
 
         def dp(i):
             if i in memo:
-                return memo[i]            
+                return memo[i]
             if i == n:
                 return True
 
@@ -30,24 +31,25 @@ class Solution:
 
         return dp(0)
 
+
 # Test cases
 solution = Solution()
 
 # Test case 1 (example)
 s1 = "leetcode"
-wordDict1 = ["leet","code"]
+wordDict1 = ["leet", "code"]
 res1 = solution.wordBreak(s1, wordDict1)
 print(f"Test case 1: {res1}")  # Expected: True
 
 # Test case 2 (example)
 s2 = "applepenapple"
-wordDict2 = ["apple","pen"]
+wordDict2 = ["apple", "pen"]
 res2 = solution.wordBreak(s2, wordDict2)
 print(f"Test case 2: {res2}")  # Expected: True
 
 # Test case 3 (example - no segmentation)
 s3 = "catsandog"
-wordDict3 = ["cats","dog","sand","and","cat"]
+wordDict3 = ["cats", "dog", "sand", "and", "cat"]
 res3 = solution.wordBreak(s3, wordDict3)
 print(f"Test case 3: {res3}")  # Expected: False
 
@@ -65,6 +67,6 @@ print(f"Test case 5: {res5}")  # Expected: False
 
 # Test case 6 (overlapping words)
 s6 = "cars"
-wordDict6 = ["car","ca","rs"]
+wordDict6 = ["car", "ca", "rs"]
 res6 = solution.wordBreak(s6, wordDict6)
 print(f"Test case 6: {res6}")  # Expected: True

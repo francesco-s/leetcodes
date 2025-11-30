@@ -1,6 +1,5 @@
 from typing import List
 
-
 # Example 1:
 #
 # Input: nums = [3,0,1] Output: 2 Explanation: n = 3 since there are 3 numbers, so all numbers are in the range [0,

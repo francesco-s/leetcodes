@@ -1,5 +1,5 @@
-from collections import Counter
 import heapq
+from collections import Counter
 from typing import List
 
 

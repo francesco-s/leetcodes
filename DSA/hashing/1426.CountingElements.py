@@ -1,6 +1,5 @@
 from typing import List
 
-
 # Example 1:
 #
 # Input: arr = [1,2,3]

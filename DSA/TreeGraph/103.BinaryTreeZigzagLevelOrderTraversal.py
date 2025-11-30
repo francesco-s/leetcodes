@@ -1,6 +1,6 @@
 # Definition for a binary tree node.
 from collections import deque
-from typing import Optional, List
+from typing import List, Optional
 
 
 class TreeNode:

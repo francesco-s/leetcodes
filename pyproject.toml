@@ -5,6 +5,12 @@ description = "LeetCode solutions and DSA practice"
 requires-python = ">=3.10"
 dependencies = ["jupyter"]
 
+[dependency-groups]
+dev = [
+    "ruff>=0.14.7",
+]
+
+
 [tool.ruff]
 exclude = [
     ".bzr",
