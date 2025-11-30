@@ -7,7 +7,7 @@ class Solution:
         def dp(i):
             if i >= len(cost):
                 return 0
-            
+
             if cache[i] != -1:
                 return cache[i]
 
@@ -15,6 +15,7 @@ class Solution:
             return cache[i]
 
         return min(dp(0), dp(1))
+
 
 # Test cases
 solution = Solution()

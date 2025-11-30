@@ -2,12 +2,12 @@ class Solution:
     def getSum(self, a: int, b: int) -> int:
         """
         Add two integers without using + or - operators.
-        
+
         Time Complexity: O(1) - Maximum 32 iterations for 32-bit integers
         Space Complexity: O(1) - Only using constant extra space
         """
-        mask = 0xFFFFFFFF # 11111111 11111111 11111111 11111111
-        max_int = 0x7FFFFFFF # 01111111 11111111 11111111 11111111
+        mask = 0xFFFFFFFF  # 11111111 11111111 11111111 11111111
+        max_int = 0x7FFFFFFF  # 01111111 11111111 11111111 11111111
 
         while b != 0:
             sum_without_carry = a ^ b
@@ -15,8 +15,9 @@ class Solution:
 
             a = sum_without_carry & mask
             b = carry & mask
-        
-        return a if a <= max_int else ~(a ^ mask) # the same as a - 2**32
+
+        return a if a <= max_int else ~(a ^ mask)  # the same as a - 2**32
+
 
 # Test cases
 solution = Solution()

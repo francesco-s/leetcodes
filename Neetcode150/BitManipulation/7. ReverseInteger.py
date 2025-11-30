@@ -1,5 +1,4 @@
 class Solution:
-
     def reverse(self, x):
         """
         Reverse an integer within 32-bit signed integer range.
@@ -8,10 +7,10 @@ class Solution:
         Space Complexity: O(1) - uses constant extra space
         """
         MAX_INT = 0x7FFFFFFF
-        
+
         sign = -1 if x < 0 else 1
         x = abs(x)
-        
+
         res = 0
         while x:
             digit = x % 10
@@ -19,8 +18,9 @@ class Solution:
             res = res * 10 + digit
             if res > MAX_INT:
                 return 0
-        
+
         return res * sign
+
 
 # Test cases
 solution = Solution()

@@ -1,18 +1,18 @@
 class Solution:
-
     def climbStairs(self, n):
         """
         Time Complexity (TC): O(n)
         Space Complexity (SC): O(n) due to recursion stack and cache
         """
         cache = [-1] * n
+
         def dfs(i):
             if i >= n:
                 if i == n:
                     return 1
                 else:
                     return 0
-            
+
             if cache[i] != -1:
                 return cache[i]
 
@@ -20,6 +20,7 @@ class Solution:
             return cache[i]
 
         return dfs(0)
+
 
 # Test cases
 solution = Solution()

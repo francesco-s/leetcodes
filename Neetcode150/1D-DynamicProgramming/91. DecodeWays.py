@@ -12,20 +12,21 @@ class Solution:
 
             if i == len(s):
                 return 1
-            if s[i] == '0':
+            if s[i] == "0":
                 return 0
             if i == len(s) - 1:
                 return 1
 
             ans = dp(i + 1)
-            if int(s[i:i + 2]) <= 26:
+            if int(s[i : i + 2]) <= 26:
                 ans += dp(i + 2)
-            
-            memo[i] = ans 
+
+            memo[i] = ans
 
             return ans
 
         return dp(0)
+
 
 # Test cases
 solution = Solution()

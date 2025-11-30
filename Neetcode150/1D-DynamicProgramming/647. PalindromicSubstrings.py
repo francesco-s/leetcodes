@@ -2,7 +2,7 @@ class Solution:
     def countSubstrings(self, s: str) -> int:
         """
         Count the number of palindromic substrings in s.
-        
+
         Time Complexity: O(n^2) - nested loops for all substrings, each dp call is O(1) with memoization
         Space Complexity: O(n^2) - memo dictionary stores results for all (i, j) pairs
         """
@@ -28,8 +28,9 @@ class Solution:
             for j in range(i, n):
                 if dp(i, j):
                     res += 1
-        
+
         return res
+
 
 # Test cases
 solution = Solution()

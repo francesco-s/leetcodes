@@ -1,6 +1,7 @@
 # Time Complexity: O(n^2) due to the nested loops and recursive dp calls
 # Space Complexity: O(n^2) for the memoization table
 
+
 class Solution:
     def longestPalindrome(self, s: str) -> str:
         memo = {}
@@ -27,7 +28,8 @@ class Solution:
                     start = i
                     max_len = j - i + 1
 
-        return s[start:start + max_len]
+        return s[start : start + max_len]
+
 
 # Test cases
 solution = Solution()
@@ -55,7 +57,9 @@ print(f"Test case 4: {res4}")  # Expected: "aaaa"
 # Test case 5 (palindrome at end)
 s5 = "abcda"
 res5 = solution.longestPalindrome(s5)
-print(f"Test case 5: {res5}")  # Expected: "a" (single char) or similar, but "abcda" isn't palindrome. Correct example: "abacaba" -> "abacaba"
+print(
+    f"Test case 5: {res5}"
+)  # Expected: "a" (single char) or similar, but "abcda" isn't palindrome. Correct example: "abacaba" -> "abacaba"
 
 # Test case 6 (entire string palindrome)
 s6 = "racecar"
