@@ -3,6 +3,21 @@ from typing import List
 
 class Solution:
     def lengthOfLIS(self, nums: List[int]) -> int:
+        """
+        Find the length of the longest strictly increasing subsequence.
+
+        Time Complexity: O(n²)
+        - We have n possible values for i (0 to n-1)
+        - We have n+1 possible values for j (0 to n)
+        - Total states: n × (n+1) = O(n²)
+        - Each state is computed once due to memoization
+        - Each state does O(1) work
+
+        Space Complexity: O(n²)
+        - Memoization table: n × (n+1) = O(n²)
+        - Recursion stack depth: O(n) in worst case
+        - Total: O(n²) + O(n) = O(n²)
+        """
         n = len(nums)
         memo = [[-1] * (n + 1) for _ in range(n)]
 
