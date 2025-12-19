@@ -4,20 +4,18 @@ class Solution:
     def findTargetSumWays(self, nums: list[int], target: int) -> int:
         memo = {}
 
-        def dfs(i, amount):
-            if i == len(nums) and amount == target:
+        def dfs(i, total):
+            if i == len(nums) and total == target:
                 return 1
-            if i == len(nums) and amount != target:
+            if i == len(nums) and total != target:
                 return 0
 
-            if (i, amount) in memo:
-                return memo[(i, amount)]
+            if (i, total) in memo:
+                return memo[(i, total)]
 
-            memo[(i, amount)] = dfs(i + 1, amount + nums[i]) + dfs(
-                i + 1, amount - nums[i]
-            )
+            memo[(i, total)] = dfs(i + 1, total + nums[i]) + dfs(i + 1, total - nums[i])
 
-            return memo[(i, amount)]
+            return memo[(i, total)]
 
         return dfs(0, 0)
 
