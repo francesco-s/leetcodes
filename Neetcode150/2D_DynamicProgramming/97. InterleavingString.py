@@ -10,21 +10,21 @@ class Solution:
             return False
 
         @lru_cache
-        def dfs(i, j, k):
+        def dfs(i, j):
+            k = i + j
+
             if k == len(s3):
                 return i == len(s1) and j == len(s2)
 
             if i < len(s1) and s1[i] == s3[k]:
-                if dfs(i + 1, j, k + 1):
+                if dfs(i + 1, j):
                     return True
 
             if j < len(s2) and s2[j] == s3[k]:
-                if dfs(i, j + 1, k + 1):
+                if dfs(i, j + 1):
                     return True
 
             return False
-
-        return dfs(0, 0, 0)
 
 
 # Test cases
