@@ -1,8 +1,8 @@
 # LeetCode 347: Top K Frequent Elements
 # https://leetcode.com/problems/top-k-frequent-elements/
 
-from collections import Counter
 import heapq
+from collections import Counter
 
 
 class Solution:

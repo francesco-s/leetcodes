@@ -1,7 +1,6 @@
 from collections import defaultdict
 from typing import List
 
-
 # Example 1:
 #
 # Input: nums = [0,1]
